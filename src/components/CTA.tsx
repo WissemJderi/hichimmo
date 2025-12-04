@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { phoneNumber } from "../utils";
 
 const CTA = () => {
   return (
@@ -13,7 +14,7 @@ const CTA = () => {
         </p>
         <div className="mt-8 flex justify-center">
           <Link
-            to="tel:+21612345678"
+            to={`tel:+216${phoneNumber}`}
             className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-base shadow hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-white"
           >
             Contactez-nous

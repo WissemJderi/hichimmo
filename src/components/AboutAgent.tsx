@@ -1,6 +1,7 @@
 import { FaHandshake, FaMapMarkerAlt } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
 import { Link } from "react-router";
+import { phoneNumber } from "../utils";
 
 const AboutAgent = () => {
   const adventages = [
@@ -54,7 +55,7 @@ const AboutAgent = () => {
 
             <div className="mt-8">
               <Link
-                to="tel:+21612345678"
+                to={`tel:+216${phoneNumber}`}
                 className="inline-block rounded-md bg-primary px-6 py-3 text-sm font-medium text-white shadow hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 Contactez-moi

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { phoneNumber } from "../utils";
 const Hero = () => {
   const properties = [
     "Appartement",
@@ -50,7 +51,7 @@ const Hero = () => {
                 Découvrir nos biens
               </Link>
               <Link
-                to="tel:+21612345678"
+                to={`tel:+216${phoneNumber}`}
                 className="inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 text-sm font-medium text-white ring-1 ring-inset ring-white/30 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Appelez pour plus d’informations

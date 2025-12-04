@@ -11,6 +11,7 @@ export interface propertyCardProps {
   price: string;
   image: string;
   description?: string;
+  longDescription?: string;
   bedrooms?: number;
   bathrooms?: number;
   area?: number;

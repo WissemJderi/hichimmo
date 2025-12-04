@@ -6,6 +6,7 @@ import App from "./App.tsx";
 import Listings from "./pages/Listings.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
+import PropertyDetailPage from "./pages/PropertyDetailPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/listings" element={<Listings />} />
+        <Route path="/listings/:id" element={<PropertyDetailPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

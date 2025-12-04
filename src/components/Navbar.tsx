@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "./items/Logo";
 import SideBarLiItem from "./items/SideBarLiItem";
 import { NavLink } from "react-router";
+import { phoneNumber } from "../utils";
 
 const Navbar = () => {
   const sideNavLiStyle = "border-b border-gray-400 p-3";
@@ -10,7 +11,7 @@ const Navbar = () => {
     { to: "/", text: "Home" },
     { to: "/listings", text: "Search/Listing" },
     { to: "/about", text: "About" },
-    { to: "tel:+21612345678", text: "Contact" },
+    { to: `tel:+216${phoneNumber}`, text: "Contact" },
   ];
 
   return (
