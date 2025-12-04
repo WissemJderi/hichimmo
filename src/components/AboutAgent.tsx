@@ -1,6 +1,22 @@
+import { FaHandshake, FaMapMarkerAlt } from "react-icons/fa";
+import { FaHouse } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const AboutAgent = () => {
+  const adventages = [
+    {
+      text: "Accompagnement personnalisé et transparent",
+      icon: <FaHandshake />,
+    },
+    {
+      text: "Expertise locale : Sahloul, Hammam Sousse, Kantaoui, et plus",
+      icon: <FaMapMarkerAlt />,
+    },
+    {
+      text: "Services complets : achat, vente, location, investissement",
+      icon: <FaHouse />,
+    },
+  ];
   return (
     <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -26,18 +42,14 @@ const AboutAgent = () => {
             </p>
 
             <ul className="mt-6 space-y-4 text-gray-700">
-              <li className="flex items-center gap-3">
-                <span className="text-indigo-600">✔</span>
-                Accompagnement personnalisé et transparent
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-indigo-600">✔</span>
-                Expertise locale : Sahloul, Hammam Sousse, Kantaoui, et plus
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-indigo-600">✔</span>
-                Services complets : achat, vente, location, investissement
-              </li>
+              {adventages.map((adventage) => {
+                return (
+                  <li className="flex items-center gap-3">
+                    <span className="text-primary">{adventage.icon}</span>
+                    {adventage.text}
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="mt-8">

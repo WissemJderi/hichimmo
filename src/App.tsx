@@ -1,6 +1,7 @@
 import AboutAgent from "./components/AboutAgent";
 import FeaturedListings from "./components/FeaturedListings";
 import Hero from "./components/Hero";
+import ServicesOffered from "./components/ServicesOffered";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Hero />
       <FeaturedListings />
       <AboutAgent />
+      <ServicesOffered />
     </>
   );
 }
