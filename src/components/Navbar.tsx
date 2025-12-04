@@ -4,10 +4,11 @@ import SideBarLiItem from "./items/SideBarLiItem";
 import { NavLink } from "react-router";
 
 const Navbar = () => {
+  const sideNavLiStyle = "border-b border-gray-400 p-3";
   const [isOpen, setIsOpen] = useState(false);
   const liItems = [
     { to: "/", text: "Home" },
-    { to: "/search", text: "Search/Listing" },
+    { to: "/listings", text: "Search/Listing" },
     { to: "/about", text: "About" },
     { to: "tel:+21612345678", text: "Contact" },
   ];
@@ -62,6 +63,7 @@ const Navbar = () => {
         <ul className="flex flex-col ">
           <li
             className={`${sideNavLiStyle} flex flex-row justify-between items-center`}
+            onClick={() => setIsOpen(false)}
           >
             <Logo />
             <button
@@ -112,4 +114,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-const sideNavLiStyle = "border-b border-gray-400 p-3";

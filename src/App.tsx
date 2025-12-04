@@ -1,11 +1,13 @@
+import AboutAgent from "./components/AboutAgent";
+import FeaturedListings from "./components/FeaturedListings";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Hero />
+      <FeaturedListings />
+      <AboutAgent />
     </>
   );
 }
