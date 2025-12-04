@@ -2,12 +2,13 @@ import { FaFacebook, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
+import { formatNumber, phoneNumber } from "../utils";
 
 const Footer = () => {
   const contactInfo = [
     { text: "Sousse, Tunisie", icon: <FaMapMarkerAlt /> },
     {
-      text: "+216 12 345 678",
+      text: `+216 ${formatNumber(phoneNumber)}`,
       icon: <FaPhone />,
     },
     {
