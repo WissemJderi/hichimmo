@@ -10,6 +10,11 @@ const FeaturedListings = () => {
       price: "250,000 TND",
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "Appartement lumineux avec balcon, proche des commodités et du centre-ville.",
+      bedrooms: 3,
+      bathrooms: 2,
+      area: 120, // m²
     },
     {
       id: 2,
@@ -18,6 +23,11 @@ const FeaturedListings = () => {
       price: "480,000 TND",
       image:
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "Maison spacieuse avec jardin et garage, idéale pour une famille.",
+      bedrooms: 4,
+      bathrooms: 3,
+      area: 250, // m²
     },
     {
       id: 3,
@@ -26,6 +36,11 @@ const FeaturedListings = () => {
       price: "1,200 TND / mois",
       image:
         "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "Bureau moderne situé au cœur de Kantaoui, parfait pour une équipe professionnelle.",
+      bedrooms: 0, // not applicable
+      bathrooms: 1,
+      area: 80, // m²
     },
   ];
   return (
@@ -48,6 +63,10 @@ const FeaturedListings = () => {
                 location={property.location}
                 price={property.price}
                 image={property.image}
+                description={property.description}
+                bedrooms={property.bedrooms}
+                bathrooms={property.bathrooms}
+                area={property.area}
               />
             ))}
           </div>
