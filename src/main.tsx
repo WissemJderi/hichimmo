@@ -7,10 +7,12 @@ import Listings from "./pages/Listings.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
 import PropertyDetailPage from "./pages/PropertyDetailPage.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<App />} />
