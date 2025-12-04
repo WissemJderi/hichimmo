@@ -68,7 +68,10 @@ const Footer = () => {
             <ul className="mt-4 space-y-2 text-sm">
               {contactInfo.map((info) => {
                 return (
-                  <li className="flex flex-row gap-2 items-center">
+                  <li
+                    key={info.text}
+                    className="flex flex-row gap-2 items-center"
+                  >
                     <span>{info.icon}</span> {info.text}
                   </li>
                 );
@@ -78,6 +81,7 @@ const Footer = () => {
               {footerLinks.map((link) => {
                 return (
                   <Link
+                    key={link.text}
                     to={link.to}
                     className="flex flex-row gap-2 items-center"
                   >

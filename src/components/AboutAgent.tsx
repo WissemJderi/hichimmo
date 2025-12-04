@@ -44,7 +44,7 @@ const AboutAgent = () => {
             <ul className="mt-6 space-y-4 text-gray-700">
               {adventages.map((adventage) => {
                 return (
-                  <li className="flex items-center gap-3">
+                  <li key={adventage.text} className="flex items-center gap-3">
                     <span className="text-primary">{adventage.icon}</span>
                     {adventage.text}
                   </li>

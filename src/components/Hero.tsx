@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 const Hero = () => {
   const properties = [
     "Appartement",
@@ -20,6 +20,7 @@ const Hero = () => {
     type: properties[0],
     location: locations[0],
   });
+  const navigate = useNavigate();
   return (
     <main>
       <section className="relative isolate overflow-hidden bg-gray-900">
@@ -106,7 +107,9 @@ const Hero = () => {
                 className="inline-flex items-center justify-center rounded-md bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log(propertyType);
+                  navigate(
+                    `/listings?type=${encodeURIComponent(propertyType.type)}&location=${encodeURIComponent(propertyType.location)}`,
+                  );
                 }}
               >
                 Rechercher
