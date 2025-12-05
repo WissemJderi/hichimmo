@@ -10,3 +10,7 @@
   --font-lato: "Lato", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

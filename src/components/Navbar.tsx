@@ -8,9 +8,9 @@ const Navbar = () => {
   const sideNavLiStyle = "border-b border-gray-400 p-3";
   const [isOpen, setIsOpen] = useState(false);
   const liItems = [
-    { to: "/", text: "Home" },
-    { to: "/listings", text: "Search/Listing" },
-    { to: "/about", text: "About" },
+    { to: "/", text: "Accueil" },
+    { to: "/listings", text: "Recherche / Annonces" },
+    { to: "#about", text: "À propos" },
     { to: `tel:+216${phoneNumber}`, text: "Contact" },
   ];
 
@@ -45,13 +45,13 @@ const Navbar = () => {
       <ul className="hidden lg:flex flex-row gap-6 text-white">
         {liItems.map((li) => {
           return (
-            <NavLink
-              to={li.to}
-              key={li.text}
-              className="cursor-pointer text-sm "
-            >
-              {li.text}
-            </NavLink>
+            <li key={li.text}>
+              {li.to.startsWith("#") ? (
+                <a href={li.to}>{li.text}</a>
+              ) : (
+                <NavLink to={li.to}>{li.text}</NavLink>
+              )}
+            </li>
           );
         })}
       </ul>
@@ -92,10 +92,21 @@ const Navbar = () => {
             </button>
           </li>
           {liItems.map((li) => {
-            return (
-              <SideBarLiItem
-                to={li.to}
+            const isHash = li.to.startsWith("#");
+
+            return isHash ? (
+              <a
                 key={li.text}
+                href={li.to}
+                className={sideNavLiStyle}
+                onClick={() => setIsOpen(false)}
+              >
+                {li.text}
+              </a>
+            ) : (
+              <SideBarLiItem
+                key={li.text}
+                to={li.to}
                 text={li.text}
                 onClick={() => setIsOpen(false)}
               />

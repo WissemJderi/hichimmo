@@ -42,8 +42,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Liens rapides</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <a href="/about" className="hover:text-white">
-                  À propos
+                <a href="/listings" className="hover:text-white">
+                  Recherche / Annonces
                 </a>
               </li>
               <li>
@@ -52,8 +52,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/listings" className="hover:text-white">
-                  Biens disponibles
+                <a href="/about" className="hover:text-white">
+                  À propos
                 </a>
               </li>
               <li>

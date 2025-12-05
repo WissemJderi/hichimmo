@@ -19,7 +19,7 @@ const AboutAgent = () => {
     },
   ];
   return (
-    <section className="bg-white py-16">
+    <section id="about" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg lg:h-full">

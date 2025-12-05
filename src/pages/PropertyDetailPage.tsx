@@ -5,6 +5,8 @@ import { MdBathroom, MdBedroomParent } from "react-icons/md";
 import { FaRuler } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 const PropertyDetailPage = () => {
+  const spanStyle =
+    "flex flex-row gap-2 items-center bg-gray-200 py-2 px-4 rounded-md";
   const { id } = useParams();
   if (!id) {
     return <p>Property not found</p>;
@@ -39,17 +41,16 @@ const PropertyDetailPage = () => {
       <p className="mt-2 text-lg text-gray-700">{property.location}</p>
       <p className="mt-4 text-gray-600">{property.longDescription}</p>
 
-      <div className="mt-6 flex gap-6 text-gray-800">
+      <div className="mt-6 flex gap-4 text-gray-800">
         {property.bedrooms > 0 && (
-          <span className="flex flex-row gap-2 items-center">
+          <span className={`${spanStyle}`}>
             <MdBedroomParent /> {property.bedrooms} m²
           </span>
         )}
-        <span className="flex flex-row gap-2 items-center">
+        <span className={`${spanStyle}`}>
           <MdBathroom /> {property.bathrooms} m²
         </span>
-
-        <span className="flex flex-row gap-2 items-center">
+        <span className={`${spanStyle}`}>
           <FaRuler /> {property.area} m²
         </span>
       </div>
