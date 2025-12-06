@@ -10,10 +10,12 @@ const Footer = () => {
     {
       text: `+216 ${formatNumber(phoneNumber)}`,
       icon: <FaPhone />,
+      to: `tel:+216${phoneNumber}`,
     },
     {
       text: "contact@agence.com",
       icon: <MdEmail />,
+      to: `mailto:contact@agence.com`,
     },
   ];
   const footerLinks = [
@@ -30,7 +32,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="text-lg font-semibold text-white">
-              Agence Immobilière
+              Hichem Immobilière
             </h3>
             <p className="mt-4 text-sm">
               Votre partenaire de confiance pour l’achat, la vente et la
@@ -42,24 +44,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Liens rapides</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <a href="/listings" className="hover:text-white">
+                <Link to="/listings" className="hover:text-white">
                   Recherche / Annonces
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="hover:text-white">
+                <a href="/#services" className="hover:text-white">
                   Services
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-white">
+                <a href="/#about" className="hover:text-white">
                   À propos
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-white">
+                <Link
+                  to={`tel:+216${phoneNumber}`}
+                  className="hover:text-white"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,7 +73,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm">
               {contactInfo.map((info) => {
-                return (
+                return info.to ? (
+                  <Link
+                    key={info.text}
+                    className="flex flex-row gap-2 items-center underline"
+                    to={info.to}
+                  >
+                    <span>{info.icon}</span> {info.text}
+                  </Link>
+                ) : (
                   <li
                     key={info.text}
                     className="flex flex-row gap-2 items-center"
@@ -96,7 +109,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Agence Immobilière. Tous droits
+          © {new Date().getFullYear()} Hichem Immobilière. Tous droits
           réservés.
         </div>
       </div>

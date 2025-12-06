@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 const Logo = () => {
   return (
     <NavLink to="/" className="text-white">
-      Hichem Immobilier
+      Hichem Immobilière
     </NavLink>
   );
 };

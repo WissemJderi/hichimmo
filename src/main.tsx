@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
 import PropertyDetailPage from "./pages/PropertyDetailPage.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import ScrollToTopButton from "./components/items/ScrollToTopButton.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/listings/:id" element={<PropertyDetailPage />} />
       </Routes>
       <Footer />
+      <ScrollToTopButton />
     </BrowserRouter>
   </StrictMode>,
 );

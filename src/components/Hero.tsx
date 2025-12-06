@@ -1,22 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { phoneNumber } from "../utils";
+import { locations, properties } from "../data";
 const Hero = () => {
-  const properties = [
-    "Appartement",
-    "Maison",
-    "Bureau",
-    "Terrain",
-    "Local commercial",
-  ];
-  const locations = [
-    "Sahloul",
-    "Hammam Sousse",
-    "Kantaoui",
-    "Chatt Mariem",
-    "Akouda",
-  ];
-
   const [propertyType, setPropertyType] = useState({
     type: properties[0],
     location: locations[0],
@@ -72,7 +58,7 @@ const Hero = () => {
                     return { ...prev, location: e.target.value };
                   });
                 }}
-                className="rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
+                className="cursor-pointer rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
               >
                 {locations.map((location) => {
                   return (
@@ -93,7 +79,7 @@ const Hero = () => {
                     return { ...prev, type: e.target.value };
                   });
                 }}
-                className="rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
+                className="cursor-pointer rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
               >
                 {properties.map((property) => {
                   return (
@@ -105,7 +91,7 @@ const Hero = () => {
               </select>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-md bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                className="inline-flex items-center justify-center rounded-md bg-white px-4 py-3 text-sm  text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 cursor-pointer font-semibold"
                 onClick={(e) => {
                   e.preventDefault();
                   navigate(

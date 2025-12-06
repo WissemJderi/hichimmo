@@ -10,7 +10,7 @@ const AboutAgent = () => {
       icon: <FaHandshake />,
     },
     {
-      text: "Expertise locale : Sahloul, Hammam Sousse, Kantaoui, et plus",
+      text: "Expertise locale : Sahloul, Hammam Sousse, Khzema, et plus",
       icon: <FaMapMarkerAlt />,
     },
     {

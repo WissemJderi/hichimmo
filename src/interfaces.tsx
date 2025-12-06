@@ -24,3 +24,7 @@ export interface propertyCardProps {
   isFeatured?: boolean;
   gallery?: string[];
 }
+
+export interface BreadcrumbProps {
+  items: { name: string; href?: string }[];
+}

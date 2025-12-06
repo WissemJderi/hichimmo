@@ -29,7 +29,7 @@ const ServicesOffered = () => {
     },
   ];
   return (
-    <section className="bg-gray-50 py-16 font-lato">
+    <section id="services" className="bg-gray-50 py-16 font-lato">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-3xl font-bold font-montserrat tracking-tight text-gray-900 sm:text-4xl text-center">
           Services proposés

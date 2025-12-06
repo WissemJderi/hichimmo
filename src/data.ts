@@ -1,0 +1,24 @@
+export const properties = [
+  "Appartement",
+  "Villa",
+  "Maison",
+  "Terrain",
+  "Local",
+  "Bureau",
+  "Depot",
+  "Usine",
+];
+export const locations = [
+  "Akouda",
+  "Chatt Mariem",
+  "Hammam Sousse",
+  "Hergla",
+  "Kalaa Sghira",
+  "Kalaa Kebira",
+  "Kantaoui",
+  "Khzema",
+  "Sahloul",
+  "Sousse",
+  "Sousse Jawhara",
+  "Sousse Riadh",
+];
