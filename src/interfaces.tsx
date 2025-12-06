@@ -9,7 +9,7 @@ export interface propertyCardProps {
   title: string;
   location: string;
   price: string;
-  image: string;
+  images: string[];
   description?: string;
   longDescription?: string;
   bedrooms?: number;

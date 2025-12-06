@@ -39,7 +39,7 @@ const PropertyDetailPage = () => {
     <div className="max-w-5xl mx-auto py-12 px-6 font-lato">
       <Breadcrumb items={breadcrumbItems} />
       <img
-        src={property.image}
+        src={property.images[0]}
         alt={property.title}
         className="w-full h-96 object-cover rounded-lg shadow"
       />
@@ -98,7 +98,7 @@ const PropertyDetailPage = () => {
                 title={listing.title}
                 location={listing.location}
                 price={listing.price}
-                image={listing.image}
+                images={listing.images}
                 description={listing.description}
                 bedrooms={listing.bedrooms}
                 bathrooms={listing.bathrooms}

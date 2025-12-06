@@ -8,8 +8,9 @@ const FeaturedListings = () => {
       title: "Appartement moderne à Sahloul",
       location: "Sahloul",
       price: "250,000 TND",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+      ],
       description:
         "Appartement lumineux avec balcon, proche des commodités et du centre-ville.",
       bedrooms: 3,
@@ -21,8 +22,9 @@ const FeaturedListings = () => {
       title: "Maison familiale à Hammam Sousse",
       location: "Hammam Sousse",
       price: "480,000 TND",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
+      ],
       description:
         "Maison spacieuse avec jardin et garage, idéale pour une famille.",
       bedrooms: 4,
@@ -34,8 +36,9 @@ const FeaturedListings = () => {
       title: "Bureau spacieux à Kantaoui",
       location: "Kantaoui",
       price: "1,200 TND / mois",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      ],
       description:
         "Bureau moderne situé au cœur de Kantaoui, parfait pour une équipe professionnelle.",
       bedrooms: 0, // not applicable
@@ -62,7 +65,7 @@ const FeaturedListings = () => {
                 title={property.title}
                 location={property.location}
                 price={property.price}
-                image={property.image}
+                images={property.images}
                 description={property.description}
                 bedrooms={property.bedrooms}
                 bathrooms={property.bathrooms}

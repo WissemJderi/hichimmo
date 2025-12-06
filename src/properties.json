@@ -5,9 +5,13 @@
     "location": "Sahloul",
     "type": "appartement",
     "price": "250,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1598928506311-a1e44c0f1c7b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580584128409-91dbb79df6d0?q=80&w=1600&auto=format&fit=crop"
+    ],
     "description": "Appartement lumineux avec balcon, proche des commodités et du centre-ville.",
-    "longDescription": "Situé dans un quartier calme et recherché de Sahloul, cet appartement moderne offre un espace de vie confortable et élégant. La pièce principale bénéficie d’une luminosité exceptionnelle grâce aux grandes baies vitrées donnant sur un balcon agréable. La cuisine est entièrement équipée et pensée pour un usage quotidien pratique. Les chambres sont spacieuses et bien isolées, idéales pour une famille. À proximité immédiate des commerces, écoles et transports, ce bien représente une excellente opportunité d’investissement.",
+    "longDescription": "Situé dans un quartier calme et recherché (...).",
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 120
@@ -18,9 +22,13 @@
     "location": "Hammam Sousse",
     "type": "maison",
     "price": "480,000 TND",
-    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154363-7c1e1b4e4a74?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154154-f3b28d1df7e1?q=80&w=1600&auto=format&fit=crop"
+    ],
     "description": "Maison spacieuse avec jardin et garage, idéale pour une famille.",
-    "longDescription": "Cette maison familiale située à Hammam Sousse offre un cadre de vie chaleureux et fonctionnel. Elle dispose d’un grand salon ouvert sur un jardin soigneusement entretenu, parfait pour profiter du soleil ou recevoir des invités. La cuisine est vaste et peut accueillir une grande table pour les repas quotidiens. Les chambres, réparties sur plusieurs niveaux, assurent intimité et confort à chaque membre de la famille. Le quartier est calme, sécurisé et proche de toutes les commodités essentielles.",
+    "longDescription": "Cette maison familiale située (...).",
     "bedrooms": 4,
     "bathrooms": 3,
     "area": 250
@@ -31,9 +39,13 @@
     "location": "Kantaoui",
     "type": "bureau",
     "price": "1,200 TND / mois",
-    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
-    "description": "Bureau moderne situé au cœur de Kantaoui, parfait pour une équipe professionnelle.",
-    "longDescription": "Ce bureau situé dans le prestigieux quartier de Kantaoui offre un environnement idéal pour une équipe dynamique. L’espace est lumineux et peut être facilement aménagé pour répondre à différents besoins professionnels. Le local se trouve dans un immeuble sécurisé et bien fréquenté, à proximité de cafés, restaurants et zones commerciales. Facile d’accès et doté d’une atmosphère professionnelle, il convient parfaitement aux entreprises souhaitant établir une présence dans un lieu stratégique. L’emplacement garantit également une excellente visibilité et accessibilité.",
+    "images": [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Bureau moderne situé au cœur de Kantaoui.",
+    "longDescription": "Ce bureau situé dans le prestigieux quartier (...).",
     "bedrooms": 0,
     "bathrooms": 1,
     "area": 80
@@ -44,9 +56,13 @@
     "location": "Khezama",
     "type": "villa",
     "price": "1,200,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154205-7c1c1c1c1c1c?q=80&w=1600&auto=format&fit=crop",
-    "description": "Villa prestigieuse avec piscine privée, grand jardin et finitions haut de gamme.",
-    "longDescription": "Cette villa de luxe située à Khezama représente l’un des biens les plus prestigieux du marché. Elle propose de vastes espaces intérieurs, sublimés par des matériaux haut de gamme et un design architectural raffiné. La grande piscine extérieure et le jardin paysager créent une atmosphère de détente incomparable. Les chambres sont conçues pour offrir un confort absolu, chacune disposant de rangements et de finitions modernes. Cette villa est idéale pour une famille recherchant un cadre exceptionnel, sécurisé et proche des meilleures commodités.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154205-7c1c1c1c1c1c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154163-3c0d1c85f0df?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154235-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Villa prestigieuse avec piscine privée.",
+    "longDescription": "Cette villa de luxe située à Khezama (...).",
     "bedrooms": 5,
     "bathrooms": 4,
     "area": 450
@@ -57,9 +73,13 @@
     "location": "Hammam Sousse",
     "type": "appartement",
     "price": "180,000 TND",
-    "image": "https://images.unsplash.com/photo-1598928506311-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Appartement chaleureux idéal pour jeunes couples, proche des écoles et commerces.",
-    "longDescription": "Cet appartement cosy offre un espace parfaitement optimisé, idéal pour un jeune couple ou un premier investissement. Le salon est lumineux et donne sur un petit balcon agréable pour prendre l’air. La cuisine, moderne et fonctionnelle, permet une utilisation pratique au quotidien. La résidence est calme, propre et bien entretenue. Situé à proximité des commerces, écoles et transports, ce bien combine confort, accessibilité et excellent rapport qualité-prix.",
+    "images": [
+      "https://images.unsplash.com/photo-1598928506311-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154370-19b56e8ecf21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a1f1f0433?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Appartement chaleureux idéal pour jeunes couples.",
+    "longDescription": "Cet appartement cosy offre (...).",
     "bedrooms": 2,
     "bathrooms": 1,
     "area": 95
@@ -70,9 +90,13 @@
     "location": "Médina de Sousse",
     "type": "maison",
     "price": "320,000 TND",
-    "image": "https://images.unsplash.com/photo-1580584128409-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Maison au charme authentique avec patio intérieur et architecture traditionnelle.",
-    "longDescription": "Située au cœur de la Médina de Sousse, cette maison traditionnelle allie authenticité et confort moderne. Elle dispose d’un patio central typique offrant une luminosité naturelle unique. Les pièces sont décorées avec des éléments d’architecture authentiques, reflétant l’histoire et le charme du quartier. Les espaces de vie sont spacieux et adaptés à un usage familial. Ce bien rare conviendra aux amateurs de patrimoine désireux de vivre dans un cadre historique et paisible.",
+    "images": [
+      "https://images.unsplash.com/photo-1580584128409-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154272-b9df5f7f3a31?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154410-0364b567c90e?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Maison au charme authentique avec patio.",
+    "longDescription": "Située au cœur de la Médina (...).",
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 180
@@ -83,9 +107,13 @@
     "location": "Kantaoui",
     "type": "penthouse",
     "price": "850,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154235-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Penthouse moderne avec terrasse panoramique et vue imprenable sur la mer.",
-    "longDescription": "Ce penthouse exceptionnel situé à Kantaoui bénéficie d’une vue dégagée sur la mer Méditerranée. La vaste terrasse panoramique est parfaite pour profiter du soleil et recevoir des invités. L’intérieur propose un style moderne, élégant et très lumineux, grâce aux grandes ouvertures. La cuisine américaine, entièrement équipée, s’intègre harmonieusement au séjour. Ce bien rare combine luxe, intimité et un cadre de vie privilégié proche du port et des attractions de Kantaoui.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154235-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580584128411-a1b3d59df1d2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687940-3b1a8ebadc35?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Penthouse moderne avec terrasse panoramique.",
+    "longDescription": "Ce penthouse exceptionnel (...).",
     "bedrooms": 4,
     "bathrooms": 3,
     "area": 300
@@ -96,9 +124,13 @@
     "location": "Sahloul",
     "type": "studio",
     "price": "95,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154260-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Studio fonctionnel parfait pour étudiants ou jeunes professionnels.",
-    "longDescription": "Ce studio fonctionnel représente une opportunité idéale pour les étudiants ou jeunes actifs recherchant un logement pratique et bien situé. L’espace est intelligemment organisé pour offrir confort et efficacité. La kitchenette permet une utilisation quotidienne simple et agréable. La résidence est calme et sécurisée, proche des arrêts de bus, écoles, cafés et commerces. Un excellent premier achat ou investissement locatif.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154260-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580584128379-1cfb77fa1f57?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1598928506309-8d6e4f90f1c7?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Studio fonctionnel parfait pour étudiants.",
+    "longDescription": "Ce studio fonctionnel représente (...).",
     "bedrooms": 1,
     "bathrooms": 1,
     "area": 45
@@ -109,9 +141,13 @@
     "location": "Akouda",
     "type": "maison",
     "price": "270,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154290-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Maison paisible entourée de verdure, idéale pour les amoureux de la nature.",
-    "longDescription": "Cette maison de campagne nichée à Akouda offre un environnement paisible entouré de verdure. Le grand terrain permet de profiter de la nature et des activités en plein air. L’intérieur est chaleureux, avec un salon convivial et des pièces adaptées à une vie familiale. Les matériaux utilisés renforcent l’esprit authentique de la maison. Parfait pour ceux qui recherchent la tranquillité loin du bruit tout en restant proche de la ville.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154290-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580584128410-f120352d7f56?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154162-a19c716c1abe?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Maison paisible entourée de verdure.",
+    "longDescription": "Cette maison de campagne nichée (...).",
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 200
@@ -122,9 +158,13 @@
     "location": "Sousse Corniche",
     "type": "appartement",
     "price": "600,000 TND",
-    "image": "https://images.unsplash.com/photo-1600585154320-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-    "description": "Appartement moderne avec vue sur mer, matériaux de qualité et sécurité 24/7.",
-    "longDescription": "Cet appartement haut standing situé à la Corniche de Sousse bénéficie d’une vue directe sur la mer. Le salon spacieux donne sur une grande baie vitrée, offrant une luminosité agréable tout au long de la journée. La cuisine moderne est équipée de matériels haut de gamme. La résidence est sécurisée 24h/24, avec ascenseur et parking souterrain. Idéal pour les personnes recherchant confort, modernité et un emplacement premium en bord de mer.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154320-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154345-d99a9f1c1e49?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607688122-e8a8ad0a30db?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "description": "Appartement moderne avec vue sur mer.",
+    "longDescription": "Cet appartement haut standing (...).",
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 160

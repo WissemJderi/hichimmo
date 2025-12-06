@@ -27,7 +27,7 @@ const Listings = () => {
             title={property.title}
             location={property.location}
             price={property.price}
-            image={property.image}
+            images={property.images}
             description={property.description}
             longDescription={property.longDescription}
             bedrooms={property.bedrooms}
