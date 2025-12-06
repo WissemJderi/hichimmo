@@ -18,18 +18,9 @@ const PropertyDetailPage = () => {
   if (!property) {
     return <p>Property not found</p>;
   }
-  const hour = new Date().getHours();
 
-  let greeting;
-  if (hour < 12) {
-    greeting = "Bonjour";
-  } else if (hour < 18) {
-    greeting = "Bon après-midi";
-  } else {
-    greeting = "Bonsoir";
-  }
   const whatsappNumber = "21698622442";
-  const message = `${greeting}, je suis intéressé par le bien avec la référence ${property.id} (${property.title}). Est-il encore disponible ?`;
+  const message = `Je suis intéressé par le bien avec la référence ${property.id} (${property.title}). Est-il encore disponible ?`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   const breadcrumbItems = [
     { name: "Acceuil", href: "/" },
