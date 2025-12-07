@@ -4,28 +4,34 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
 import { formatNumber, phoneNumber } from "../utils";
 
+const contactInfo = [
+  { text: "Sousse, Tunisie", icon: <FaMapMarkerAlt aria-hidden="true" /> },
+  {
+    text: `+216 ${formatNumber(phoneNumber)}`,
+    icon: <FaPhone aria-hidden="true" />,
+    href: `tel:+216${phoneNumber}`,
+  },
+  {
+    text: "contact@agence.com",
+    icon: <MdEmail aria-hidden="true" />,
+    href: `mailto:contact@agence.com`,
+  },
+];
+
+const footerLinks = [
+  {
+    text: "Whatsapp",
+    icon: <IoLogoWhatsapp aria-hidden="true" />,
+    href: "https://wa.me/21698622442",
+  },
+  {
+    text: "Facebook",
+    icon: <FaFacebook aria-hidden="true" />,
+    href: "https://facebook.com/yourpage",
+  },
+];
+
 const Footer = () => {
-  const contactInfo = [
-    { text: "Sousse, Tunisie", icon: <FaMapMarkerAlt /> },
-    {
-      text: `+216 ${formatNumber(phoneNumber)}`,
-      icon: <FaPhone />,
-      to: `tel:+216${phoneNumber}`,
-    },
-    {
-      text: "contact@agence.com",
-      icon: <MdEmail />,
-      to: `mailto:contact@agence.com`,
-    },
-  ];
-  const footerLinks = [
-    {
-      text: "Whatsapp",
-      icon: <IoLogoWhatsapp />,
-      to: "whatsapp",
-    },
-    { text: "Facebook", icon: <FaFacebook />, to: "facebook" },
-  ];
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -59,12 +65,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to={`tel:+216${phoneNumber}`}
-                  className="hover:text-white"
-                >
+                <a href={`tel:+216${phoneNumber}`} className="hover:text-white">
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -73,20 +76,20 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm">
               {contactInfo.map((info) => {
-                return info.to ? (
-                  <Link
+                return info.href ? (
+                  <a
                     key={info.text}
                     className="flex flex-row gap-2 items-center underline"
-                    to={info.to}
+                    href={info.href}
                   >
-                    <span>{info.icon}</span> {info.text}
-                  </Link>
+                    {info.icon} {info.text}
+                  </a>
                 ) : (
                   <li
                     key={info.text}
                     className="flex flex-row gap-2 items-center"
                   >
-                    <span>{info.icon}</span> {info.text}
+                    {info.icon} {info.text}
                   </li>
                 );
               })}
@@ -94,14 +97,16 @@ const Footer = () => {
             <div className="mt-4 flex space-x-4">
               {footerLinks.map((link) => {
                 return (
-                  <Link
+                  <a
                     key={link.text}
-                    to={link.to}
-                    className="flex flex-row gap-2 items-center"
+                    href={link.href}
+                    rel="noopener noreferrer"
+                    className="flex flex-row gap-2 items-center hover:text-white"
+                    aria-label={`Visitez notre page ${link.text}`}
                   >
                     {link.icon}
                     {link.text}
-                  </Link>
+                  </a>
                 );
               })}
             </div>

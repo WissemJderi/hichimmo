@@ -8,6 +8,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import Breadcrumb from "../components/items/Breadcrumb";
 import PropertyCard from "../components/items/PropertyCard";
 import EmblaCarousel from "../components/items/Embla/EmblaCarousel";
+import { useMemo } from "react";
 const PropertyDetailPage = () => {
   const spanStyle =
     "flex flex-row gap-2 items-center bg-gray-200 py-2 px-4 rounded-md text-sm";
@@ -28,13 +29,15 @@ const PropertyDetailPage = () => {
     { name: "Annonces", href: "/listings" },
     { name: property.title },
   ];
-  const similairListing = properties
-    .filter(
-      (prop) =>
-        property.type?.toLowerCase() === prop.type?.toLowerCase() &&
-        property.id !== prop.id,
-    )
-    .slice(0, 7);
+  const similarListings = useMemo(() => {
+    return properties
+      .filter(
+        (prop) =>
+          property.type?.toLowerCase() === prop.type?.toLowerCase() &&
+          property.id !== prop.id,
+      )
+      .slice(0, 7);
+  }, [property]);
 
   return (
     <div className="max-w-5xl mx-auto py-12 px-6 font-lato">
@@ -54,11 +57,11 @@ const PropertyDetailPage = () => {
       <div className="mt-6 flex gap-4 text-gray-800 flex-wrap">
         {property.bedrooms > 0 && (
           <span className={`${spanStyle}`}>
-            <MdBedroomParent /> {property.bedrooms} m²
+            <MdBedroomParent /> {property.bedrooms} chambres
           </span>
         )}
         <span className={`${spanStyle}`}>
-          <MdBathroom /> {property.bathrooms} m²
+          <MdBathroom /> {property.bathrooms} salles de bain
         </span>
         <span className={`${spanStyle}`}>
           <FaRuler /> {property.area} m²
@@ -81,27 +84,14 @@ const PropertyDetailPage = () => {
       <h2 className="text-center py-8 text-3xl font-bold tracking-tight font-montserrat text-gray-900 sm:text-4xl">
         Biens similaires
       </h2>
-      {similairListing.length == 0 ? (
-        <h2 className="text-center py-6 text-lg tracking-tight font-montserrat text-gray-900 sm:text-4xl">
+      {similarListings.length == 0 ? (
+        <p className="text-center py-6 text-lg tracking-tight font-montserrat text-gray-900 sm:text-4xl">
           Aucun bien similaire n'a été trouvé
-        </h2>
+        </p>
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
-          {similairListing.map((listing) => {
-            return (
-              <PropertyCard
-                key={listing.id}
-                id={listing.id}
-                title={listing.title}
-                location={listing.location}
-                price={listing.price}
-                images={listing.images}
-                description={listing.description}
-                bedrooms={listing.bedrooms}
-                bathrooms={listing.bathrooms}
-                area={listing.area}
-              />
-            );
+          {similarListings.map((listing) => {
+            return <PropertyCard key={listing.id} {...listing} />;
           })}
         </div>
       )}

@@ -4,6 +4,9 @@ import { FaRuler } from "react-icons/fa";
 import { MdBathroom, MdBedroomParent } from "react-icons/md";
 import EmblaCarousel from "./Embla/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
+import React from "react";
+
+const OPTIONS: EmblaOptionsType = { dragFree: false };
 
 const PropertyCard = ({
   id,
@@ -16,7 +19,6 @@ const PropertyCard = ({
   bathrooms,
   area,
 }: propertyCardProps) => {
-  const OPTIONS: EmblaOptionsType = { dragFree: false };
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow hover:shadow-lg transition flex flex-col justify-between">
       <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
@@ -27,10 +29,10 @@ const PropertyCard = ({
 
         <div className="mt-3 flex gap-6 text-sm text-gray-700">
           <span className="flex flex-row gap-2 items-center">
-            <MdBedroomParent /> {bedrooms} m²
+            <MdBedroomParent /> {bedrooms} Ch.
           </span>
           <span className="flex flex-row gap-2 items-center">
-            <MdBathroom /> {bathrooms} m²
+            <MdBathroom /> {bathrooms} SDB
           </span>
           <span className="flex flex-row gap-2 items-center">
             <FaRuler /> {area} m²
@@ -49,4 +51,4 @@ const PropertyCard = ({
   );
 };
 
-export default PropertyCard;
+export default React.memo(PropertyCard);

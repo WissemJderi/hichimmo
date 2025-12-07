@@ -4,15 +4,16 @@ import SideBarLiItem from "./items/SideBarLiItem";
 import { NavLink } from "react-router";
 import { phoneNumber } from "../utils";
 
+const liItems = [
+  { to: "/", text: "Accueil" },
+  { to: "/listings", text: "Recherche / Annonces" },
+  { to: "#about", text: "À propos" },
+  { to: `tel:+216${phoneNumber}`, text: "Contact" },
+];
+
 const Navbar = () => {
   const sideNavLiStyle = "border-b border-gray-400 p-3";
   const [isOpen, setIsOpen] = useState(false);
-  const liItems = [
-    { to: "/", text: "Accueil" },
-    { to: "/listings", text: "Recherche / Annonces" },
-    { to: "#about", text: "À propos" },
-    { to: `tel:+216${phoneNumber}`, text: "Contact" },
-  ];
 
   return (
     <nav className="bg-primary relative z-10 py-4 px-6 text-base font-semibold text-sm flex items-center lg:justify-around justify-between">
@@ -21,6 +22,8 @@ const Navbar = () => {
       <button
         className="text-white lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-expanded={isOpen}
       >
         <svg
           className="w-6 h-6"
@@ -70,6 +73,7 @@ const Navbar = () => {
             <button
               className="text-white lg:hidden"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Fermer le menu"
             >
               <svg
                 className="w-6 h-6"

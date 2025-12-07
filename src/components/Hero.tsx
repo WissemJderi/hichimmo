@@ -7,13 +7,18 @@ const Hero = () => {
     type: properties[0],
     location: locations[0],
   });
+  const handleChange =
+    (field: "type" | "location") => (e: React.ChangeEvent<HTMLSelectElement>) =>
+      setPropertyType((prev) => ({ ...prev, [field]: e.target.value }));
   const navigate = useNavigate();
   return (
-    <main>
+    <header>
       <section className="relative isolate overflow-hidden bg-gray-900">
         <img
           src="/hero.webp"
           alt="Real estate background"
+          width={1920}
+          height={1080}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
 
@@ -48,16 +53,16 @@ const Hero = () => {
               className="font-lato mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"
               id="search"
             >
-              <label className="sr-only" htmlFor="location">
+              <label
+                className="sr-only"
+                aria-label="Localisation"
+                htmlFor="location"
+              >
                 Localisation
               </label>
               <select
                 id="location"
-                onChange={(e) => {
-                  setPropertyType((prev) => {
-                    return { ...prev, location: e.target.value };
-                  });
-                }}
+                onChange={handleChange("location")}
                 className="cursor-pointer rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
               >
                 {locations.map((location) => {
@@ -74,11 +79,7 @@ const Hero = () => {
               </label>
               <select
                 id="type"
-                onChange={(e) => {
-                  setPropertyType((prev) => {
-                    return { ...prev, type: e.target.value };
-                  });
-                }}
+                onChange={handleChange("type")}
                 className="cursor-pointer rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
               >
                 {properties.map((property) => {
@@ -105,7 +106,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-    </main>
+    </header>
   );
 };
 

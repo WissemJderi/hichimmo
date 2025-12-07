@@ -42,6 +42,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 className="w-full aspect-4/3 md:aspect-video object-fill shadow"
                 src={src}
                 alt={`slide-${i}`}
+                width={800}
+                loading="lazy"
+                height={600}
               />
             </div>
           ))}

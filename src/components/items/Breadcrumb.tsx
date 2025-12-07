@@ -10,13 +10,21 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;
           return (
-            <li key={idx} className="flex items-center text-xs font-semibold">
+            <li
+              key={item.name}
+              className="flex items-center text-xs font-semibold"
+            >
               {item.href && !isLast ? (
                 <Link to={item.href} className="hover:text-gray-900">
                   {item.name}
                 </Link>
               ) : (
-                <span className="text-gray-900 font-semibold">{item.name}</span>
+                <span
+                  className="text-gray-900 font-semibold"
+                  aria-current="page"
+                >
+                  {item.name}
+                </span>
               )}
               {!isLast && (
                 <FaCircleChevronRight className="w-4 h-4 mx-1 text-primary" />

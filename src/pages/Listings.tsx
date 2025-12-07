@@ -1,40 +1,44 @@
 import { useSearchParams } from "react-router";
 import PropertyCard from "../components/items/PropertyCard";
 import properties from "../properties.json";
+import { useMemo } from "react";
 
 const Listings = () => {
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type");
   const location = searchParams.get("location");
 
-  const filteredListings = properties.filter((property) => {
-    return (
-      (!type || property.type.toLowerCase() === type.toLowerCase()) &&
-      (!location || property.location.toLowerCase() === location.toLowerCase())
-    );
-  });
-
+  const filteredListings = useMemo(() => {
+    return properties.filter((property) => {
+      const propertyType = property.type?.toLowerCase() || "";
+      const propertyLocation = property.location?.toLowerCase() || "";
+      return (
+        (!type || propertyType === type.toLowerCase()) &&
+        (!location || propertyLocation === location.toLowerCase())
+      );
+    });
+  }, [type, location]);
   return (
-    <div className="mx-auto max-w-7xl px-6 py-16">
-      <h2 className="text-3xl font-bold tracking-tight font-montserrat text-gray-900 sm:text-4xl text-center">
+    <div
+      className="mx-auto max-w-7xl px-6 py-16"
+      aria-labelledby="listings-heading"
+    >
+      <h2
+        id="listings-heading"
+        className="text-3xl font-bold tracking-tight font-montserrat text-gray-900 sm:text-4xl text-center"
+      >
         Découvrez Nos Propriétés
       </h2>
       <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
-        {filteredListings.map((property) => (
-          <PropertyCard
-            key={property.id}
-            id={property.id}
-            title={property.title}
-            location={property.location}
-            price={property.price}
-            images={property.images}
-            description={property.description}
-            longDescription={property.longDescription}
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathrooms}
-            area={property.area}
-          />
-        ))}
+        {filteredListings.length > 0 ? (
+          filteredListings.map((property) => (
+            <PropertyCard key={property.id} {...property} />
+          ))
+        ) : (
+          <p className="text-center text-gray-600 mt-6">
+            Aucun bien ne correspond à votre recherche.
+          </p>
+        )}
       </div>
     </div>
   );

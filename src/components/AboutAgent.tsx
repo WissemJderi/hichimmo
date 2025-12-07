@@ -7,15 +7,15 @@ const AboutAgent = () => {
   const adventages = [
     {
       text: "Accompagnement personnalisé et transparent",
-      icon: <FaHandshake />,
+      icon: FaHandshake,
     },
     {
       text: "Expertise locale : Sahloul, Hammam Sousse, Khzema, et plus",
-      icon: <FaMapMarkerAlt />,
+      icon: FaMapMarkerAlt,
     },
     {
       text: "Services complets : achat, vente, location, investissement",
-      icon: <FaHouse />,
+      icon: FaHouse,
     },
   ];
   return (
@@ -27,6 +27,8 @@ const AboutAgent = () => {
               src="https://unsplash.com/photos/HfMCgqOLTyM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTR8fHJlYWwlMjBlc3RhdGUlMjBhZ2VudHxlbnwwfHx8fDE3NjQ4MzcwODJ8MA&force=true&w=1920"
               alt="Agent portrait"
               className="h-full w-full object-cover"
+              width={1920}
+              height={1080}
             />
           </div>
 
@@ -43,11 +45,11 @@ const AboutAgent = () => {
             </p>
 
             <ul className="mt-6 space-y-4 text-gray-700">
-              {adventages.map((adventage) => {
+              {adventages.map(({ text, icon: Icon }) => {
                 return (
-                  <li key={adventage.text} className="flex items-center gap-3">
-                    <span className="text-primary">{adventage.icon}</span>
-                    {adventage.text}
+                  <li key={text} className="flex items-center gap-3">
+                    <Icon className="text-primary" />
+                    {text}
                   </li>
                 );
               })}
