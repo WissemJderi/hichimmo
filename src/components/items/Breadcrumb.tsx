@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import type { BreadcrumbProps } from "../../interfaces";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
@@ -19,7 +19,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
                 <span className="text-gray-900 font-semibold">{item.name}</span>
               )}
               {!isLast && (
-                <FaCircleChevronLeft className="w-4 h-4 mx-1 text-primary" />
+                <FaCircleChevronRight className="w-4 h-4 mx-1 text-primary" />
               )}
             </li>
           );

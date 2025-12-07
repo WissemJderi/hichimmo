@@ -19,9 +19,7 @@ const PropertyCard = ({
   const OPTIONS: EmblaOptionsType = { dragFree: false };
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow hover:shadow-lg transition flex flex-col justify-between">
-      {/* <img src={image} alt={title} className="h-48 w-full object-cover" /> */}
-
-      <EmblaCarousel slides={images} options={OPTIONS} />
+      <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
       <div className="p-6">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
         <p className="mt-2 text-sm text-gray-800">{location}</p>
