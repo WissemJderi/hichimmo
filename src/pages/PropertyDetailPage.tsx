@@ -28,13 +28,13 @@ const PropertyDetailPage = () => {
     { name: "Annonces", href: "/listings" },
     { name: property.title },
   ];
-  const similairLisitng = properties.filter((prop) => {
-    return (
-      !property.type ||
-      (property.type.toLowerCase() === prop.type.toLowerCase() &&
-        property.id !== prop.id)
-    );
-  });
+  const similairListing = properties
+    .filter(
+      (prop) =>
+        property.type?.toLowerCase() === prop.type?.toLowerCase() &&
+        property.id !== prop.id,
+    )
+    .slice(0, 7);
 
   return (
     <div className="max-w-5xl mx-auto py-12 px-6 font-lato">
@@ -81,13 +81,13 @@ const PropertyDetailPage = () => {
       <h2 className="text-center py-8 text-3xl font-bold tracking-tight font-montserrat text-gray-900 sm:text-4xl">
         Biens similaires
       </h2>
-      {similairLisitng.length == 0 ? (
+      {similairListing.length == 0 ? (
         <h2 className="text-center py-6 text-lg tracking-tight font-montserrat text-gray-900 sm:text-4xl">
           Aucun bien similaire n'a été trouvé
         </h2>
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
-          {similairLisitng.map((listing) => {
+          {similairListing.map((listing) => {
             return (
               <PropertyCard
                 key={listing.id}

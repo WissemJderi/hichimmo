@@ -14,6 +14,8 @@ export interface propertyCardProps {
   longDescription?: string;
   bedrooms?: number;
   bathrooms?: number;
+  floor?: number;
+  parking?: boolean;
   area?: number;
   type?: string;
   status?: "sale" | "rent" | "sold";
