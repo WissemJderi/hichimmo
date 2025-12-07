@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { phoneNumber } from "../utils";
@@ -27,14 +28,31 @@ const Hero = () => {
         <div className="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:py-32">
           <div className="max-w-2xl">
             <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl font-montserrat">
-              Trouvez le bien immobilier qui vous correspond
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Trouvez le bien immobilier qui vous correspond
+              </motion.span>
             </h1>
             <p className="mt-5 text-gray-200 sm:text-lg font-lato">
-              Appartements, maisons, bureaux ou terrains — un accompagnement sur
-              mesure pour chaque projet.
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
+                Appartements, maisons, bureaux ou terrains — un accompagnement
+                sur mesure pour chaque projet.
+              </motion.span>
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row font-lato">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row font-lato"
+            >
               <Link
                 to="/listings"
                 className="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
@@ -47,7 +65,7 @@ const Hero = () => {
               >
                 Appelez pour plus d’informations
               </Link>
-            </div>
+            </motion.div>
 
             <form
               className="font-lato mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"

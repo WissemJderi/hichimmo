@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router";
 import type { propertyCardProps } from "../../interfaces";
 import { FaRuler } from "react-icons/fa";
@@ -20,7 +21,14 @@ const PropertyCard = ({
   area,
 }: propertyCardProps) => {
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow hover:shadow-lg transition flex flex-col justify-between">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.5 }}
+      className="overflow-hidden rounded-lg bg-white shadow hover:shadow-lg transition flex flex-col justify-between"
+    >
       <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
       <div className="p-6">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
@@ -47,7 +55,7 @@ const PropertyCard = ({
           Voir le détail
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

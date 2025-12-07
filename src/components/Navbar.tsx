@@ -12,7 +12,7 @@ const liItems = [
 ];
 
 const Navbar = () => {
-  const sideNavLiStyle = "border-b border-gray-400 p-3";
+  const sideNavLiStyle = "border-b border-gray-400 px-3 py-4";
   const [isOpen, setIsOpen] = useState(false);
 
   return (
