@@ -3,6 +3,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
 import { formatNumber, phoneNumber } from "../utils";
+import { motion } from "framer-motion";
 
 const contactInfo = [
   { text: "Sousse, Tunisie", icon: <FaMapMarkerAlt aria-hidden="true" /> },
@@ -31,12 +32,29 @@ const footerLinks = [
   },
 ];
 
+const columnVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-gray-900 text-gray-300"
+    >
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+          className="grid gap-8 md:grid-cols-3"
+        >
+          <motion.div variants={columnVariants}>
             <h3 className="text-lg font-semibold text-white">
               Hichem Immobilière
             </h3>
@@ -44,9 +62,9 @@ const Footer = () => {
               Votre partenaire de confiance pour l’achat, la vente et la
               location de biens à Sousse et ses environs.
             </p>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={columnVariants}>
             <h3 className="text-lg font-semibold text-white">Liens rapides</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
@@ -70,9 +88,9 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={columnVariants}>
             <h3 className="text-lg font-semibold text-white">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm">
               {contactInfo.map((info) => {
@@ -97,7 +115,9 @@ const Footer = () => {
             <div className="mt-4 flex space-x-4">
               {footerLinks.map((link) => {
                 return (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     key={link.text}
                     href={link.href}
                     rel="noopener noreferrer"
@@ -106,19 +126,25 @@ const Footer = () => {
                   >
                     {link.icon}
                     {link.text}
-                  </a>
+                  </motion.a>
                 );
               })}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400"
+        >
           © {new Date().getFullYear()} Hichem Immobilière. Tous droits
           réservés.
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

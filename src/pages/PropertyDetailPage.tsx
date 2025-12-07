@@ -9,6 +9,8 @@ import Breadcrumb from "../components/items/Breadcrumb";
 import PropertyCard from "../components/items/PropertyCard";
 import EmblaCarousel from "../components/items/Embla/EmblaCarousel";
 import { useMemo } from "react";
+import { motion } from "framer-motion";
+
 const PropertyDetailPage = () => {
   const spanStyle =
     "flex flex-row gap-2 items-center bg-gray-200 py-2 px-4 rounded-md text-sm";
@@ -40,7 +42,12 @@ const PropertyDetailPage = () => {
   }, [property]);
 
   return (
-    <div className="max-w-5xl mx-auto py-12 px-6 font-lato">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-5xl mx-auto py-12 px-6 font-lato"
+    >
       <Breadcrumb items={breadcrumbItems} />
       <EmblaCarousel slides={property.images} rounded />
       <h1 className="mt-6 text-3xl font-bold font-montserrat">
@@ -95,7 +102,7 @@ const PropertyDetailPage = () => {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

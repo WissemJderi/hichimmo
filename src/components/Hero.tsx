@@ -67,7 +67,10 @@ const Hero = () => {
               </Link>
             </motion.div>
 
-            <form
+            <motion.form
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="font-lato mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"
               id="search"
             >
@@ -120,7 +123,7 @@ const Hero = () => {
               >
                 Rechercher
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </section>

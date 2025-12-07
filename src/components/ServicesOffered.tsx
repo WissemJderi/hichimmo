@@ -1,5 +1,6 @@
 import { FaBriefcase, FaKey, FaMoneyBill } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -30,17 +31,47 @@ const services = [
 
 const ServicesOffered = () => {
   return (
-    <section id="services" className="bg-gray-50 py-16 font-lato">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      id="services"
+      className="bg-gray-50 py-16 font-lato"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-3xl font-bold font-montserrat tracking-tight text-gray-900 sm:text-4xl text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold font-montserrat tracking-tight text-gray-900 sm:text-4xl text-center"
+        >
           Services proposés
-        </h2>
-        <p className="mt-4 text-lg text-gray-600 text-center">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="mt-4 text-lg text-gray-600 text-center"
+        >
           Découvrez l’ensemble des solutions que nous mettons à votre
           disposition.
-        </p>
+        </motion.p>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: { staggerChildren: 0.15 },
+            },
+          }}
+          className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {services.map(({ title, description, icon: Icon }) => (
             <article
               key={title}
@@ -53,9 +84,9 @@ const ServicesOffered = () => {
               <p className="mt-2 text-sm text-gray-600">{description}</p>
             </article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
