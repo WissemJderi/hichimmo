@@ -27,7 +27,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const roundedBorder = rounded ? "rounded-lg" : "";
 
   return (
-    <section className="embla w-full max-w-full">
+    <section className="embla">
       <div
         className={`embla__viewport overflow-hidden ${roundedBorder}`}
         ref={emblaRef}
@@ -39,7 +39,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               key={i}
             >
               <img
-                className="w-full aspect-4/3 md:aspect-video object-cover shadow"
+                className="w-full aspect-4/3 md:aspect-video object-fill shadow"
                 src={src}
                 alt={`slide-${i}`}
               />
