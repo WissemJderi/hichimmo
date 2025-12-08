@@ -5,13 +5,7 @@
     "location": "Sahloul",
     "type": "appartement",
     "price": "250,000 TND",
-    "images": [
-      "https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/527090410_693976320352379_2912617421919521917_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=454cf4&_nc_ohc=Ck6D5QMMzU0Q7kNvwHxlhE3&_nc_oc=AdnBZo5Vh7RVJjYzo5riMi9nMhrUWmeTfv4382O2lY9jJh5-3LV5IQFENAJiZ77TNwc&_nc_zt=23&_nc_ht=scontent.ftun10-1.fna&_nc_gid=gqw_iutdQ2Lkfm5q9hZfBg&oh=00_AfkhPgeNmleNSOKj5yuz2XiTiPpHbnPNmhFwitTfy-O9-Q&oe=693B1A68",
-      "https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/515509910_669983579418320_5283819971604672079_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=946e27&_nc_ohc=uBFpEWJEKF4Q7kNvwGxCP67&_nc_oc=AdnxsDzNjVwJzIcaB9Rb9NUIt8jOemndjEuIAjO_0Fa6ee0-SgTbXeBBIXd5_IDyNdg&_nc_zt=23&_nc_ht=scontent.ftun10-1.fna&_nc_gid=gqw_iutdQ2Lkfm5q9hZfBg&oh=00_Aflj8mNqr0TRQ2rtc9T8yvaGibJnSL_9Hu2QPr2pN2SYRw&oe=693B1AD0",
-      "https://scontent.ftun10-2.fna.fbcdn.net/v/t39.30808-6/515437029_669983806084964_4082901930215787160_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=946e27&_nc_ohc=6DmZGq3_K7oQ7kNvwHLJzbf&_nc_oc=Adk4BW5uEO1by-hTo3YGYrPX7QOWj5cQw5VAxWYYm_DpIrfagUG2NZwxHNa2diwlZrs&_nc_zt=23&_nc_ht=scontent.ftun10-2.fna&_nc_gid=gqw_iutdQ2Lkfm5q9hZfBg&oh=00_AfmWTUfZx7r9kAlpbAEBP5GIEkOS65riEq3fIo0BTdOWmw&oe=693B1EB6",
-      "https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/590790126_799567936459883_8249751566881791754_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&ccb=1-7&_nc_sid=454cf4&_nc_ohc=tr36C2p2yOkQ7kNvwEiWL5r&_nc_oc=Adle0lSXZAE8FhuxXZTv2q184LpsTWvsn_ZhKlWzRv6eyCGR9WXlwRYKBrmetPbFzr4&_nc_zt=23&_nc_ht=scontent.ftun10-1.fna&_nc_gid=VemS3WP2Y4ZwizIiAvca0Q&oh=00_Aflj4wo7lXU1Q-UNDWegIgGe0KbCIIT1vw_QIjQezng6aw&oe=693B1B20",
-      "https://scontent.ftun10-2.fna.fbcdn.net/v/t39.30808-6/591980681_799564573126886_5889716279882454116_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=946e27&_nc_ohc=w1tZLg5Mw-AQ7kNvwGnRcfk&_nc_oc=AdnpV8ZFFN49wMjwxldj_YrafZ3twv4sErcJbx1srloEiqJpzxHQFMdpbDdepXxVr5g&_nc_zt=23&_nc_ht=scontent.ftun10-2.fna&_nc_gid=VemS3WP2Y4ZwizIiAvca0Q&oh=00_AfnFblBDHOr6GEPCdlFN4pwMZbPvEjLXkqRIVMUZpmwwbQ&oe=693AFF4B"
-    ],
+    "images": ["/images/1/image1.webp", "/images/1/image2.webp"],
     "description": "Appartement lumineux avec balcon, proche des commodités et du centre-ville.",
     "longDescription": "Situé dans un quartier calme et recherché (...).",
     "bedrooms": 3,
@@ -20,15 +14,11 @@
   },
   {
     "id": 2,
-    "title": "Maison familiale à Hammam Sousse",
+    "title": "Appartement familiale à Hammam Sousse",
     "location": "Hammam Sousse",
-    "type": "maison",
+    "type": "appartement",
     "price": "480,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154363-7c1e1b4e4a74?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154154-f3b28d1df7e1?q=80&w=1600&auto=format&fit=crop"
-    ],
+    "images": ["/images/2/image1.webp", "/images/2/image2.webp"],
     "description": "Maison spacieuse avec jardin et garage, idéale pour une famille.",
     "longDescription": "Cette maison familiale située (...).",
     "bedrooms": 4,
@@ -41,134 +31,11 @@
     "location": "Kantaoui",
     "type": "bureau",
     "price": "1,200 TND / mois",
-    "images": [
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1600&auto=format&fit=crop"
-    ],
+    "images": ["/images/3/image1.webp", "/images/3/image2.webp"],
     "description": "Bureau moderne situé au cœur de Kantaoui.",
     "longDescription": "Ce bureau situé dans le prestigieux quartier (...).",
     "bedrooms": 0,
     "bathrooms": 1,
     "area": 80
-  },
-  {
-    "id": 4,
-    "title": "Villa de luxe à Khezama",
-    "location": "Khezama",
-    "type": "villa",
-    "price": "1,200,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1600585154205-7c1c1c1c1c1c?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154163-3c0d1c85f0df?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154235-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Villa prestigieuse avec piscine privée.",
-    "longDescription": "Cette villa de luxe située à Khezama (...).",
-    "bedrooms": 5,
-    "bathrooms": 4,
-    "area": 450
-  },
-  {
-    "id": 5,
-    "title": "Appartement cosy à Hammam Sousse",
-    "location": "Hammam Sousse",
-    "type": "appartement",
-    "price": "180,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1598928506311-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154370-19b56e8ecf21?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600607687939-ce8a1f1f0433?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Appartement chaleureux idéal pour jeunes couples.",
-    "longDescription": "Cet appartement cosy offre (...).",
-    "bedrooms": 2,
-    "bathrooms": 1,
-    "area": 95
-  },
-  {
-    "id": 6,
-    "title": "Maison traditionnelle à Médina de Sousse",
-    "location": "Médina de Sousse",
-    "type": "maison",
-    "price": "320,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1580584128409-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154272-b9df5f7f3a31?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154410-0364b567c90e?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Maison au charme authentique avec patio.",
-    "longDescription": "Située au cœur de la Médina (...).",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "area": 180
-  },
-  {
-    "id": 7,
-    "title": "Penthouse avec vue sur mer à Kantaoui",
-    "location": "Kantaoui",
-    "type": "penthouse",
-    "price": "850,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1600585154235-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1580584128411-a1b3d59df1d2?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600607687940-3b1a8ebadc35?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Penthouse moderne avec terrasse panoramique.",
-    "longDescription": "Ce penthouse exceptionnel (...).",
-    "bedrooms": 4,
-    "bathrooms": 3,
-    "area": 300
-  },
-  {
-    "id": 8,
-    "title": "Studio pratique à Sahloul",
-    "location": "Sahloul",
-    "type": "studio",
-    "price": "95,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1600585154260-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1580584128379-1cfb77fa1f57?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1598928506309-8d6e4f90f1c7?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Studio fonctionnel parfait pour étudiants.",
-    "longDescription": "Ce studio fonctionnel représente (...).",
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "area": 45
-  },
-  {
-    "id": 9,
-    "title": "Maison de campagne à Akouda",
-    "location": "Akouda",
-    "type": "maison",
-    "price": "270,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1600585154290-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1580584128410-f120352d7f56?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154162-a19c716c1abe?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Maison paisible entourée de verdure.",
-    "longDescription": "Cette maison de campagne nichée (...).",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "area": 200
-  },
-  {
-    "id": 10,
-    "title": "Appartement haut standing à Sousse Corniche",
-    "location": "Sousse Corniche",
-    "type": "appartement",
-    "price": "600,000 TND",
-    "images": [
-      "https://images.unsplash.com/photo-1600585154320-1c1c1c1c1c1?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154345-d99a9f1c1e49?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600607688122-e8a8ad0a30db?q=80&w=1600&auto=format&fit=crop"
-    ],
-    "description": "Appartement moderne avec vue sur mer.",
-    "longDescription": "Cet appartement haut standing (...).",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "area": 160
   }
 ]

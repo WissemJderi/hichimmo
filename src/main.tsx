@@ -15,17 +15,21 @@ const PropertyDetailPage = React.lazy(
 
 function Layout() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/listings" element={<Listings />} />
-        <Route path="/listings/:id" element={<PropertyDetailPage />} />
-      </Routes>
+      <main className="grow">
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/listings" element={<Listings />} />
+          <Route path="/listings/:id" element={<PropertyDetailPage />} />
+        </Routes>
+      </main>
+
       <Footer />
+
       <ScrollToTopButton />
-    </>
+    </div>
   );
 }
 createRoot(document.getElementById("root")!).render(
