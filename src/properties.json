@@ -1,41 +1,66 @@
 [
   {
-    "id": 1,
-    "title": "Appartement moderne à Sahloul",
-    "location": "Sahloul",
-    "type": "appartement",
-    "price": "250,000 TND",
-    "images": ["/images/1/image1.webp", "/images/1/image2.webp"],
-    "description": "Appartement lumineux avec balcon, proche des commodités et du centre-ville.",
-    "longDescription": "Situé dans un quartier calme et recherché (...).",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "area": 120
-  },
-  {
-    "id": 2,
-    "title": "Appartement familiale à Hammam Sousse",
-    "location": "Hammam Sousse",
-    "type": "appartement",
-    "price": "480,000 TND",
-    "images": ["/images/2/image1.webp", "/images/2/image2.webp"],
-    "description": "Maison spacieuse avec jardin et garage, idéale pour une famille.",
-    "longDescription": "Cette maison familiale située (...).",
+    "id": 146,
+    "ref": "R146",
+    "title": "À VENDRE – MAISON VUE MER EXCEPTIONNELLE",
+    "location": "Médina de Sousse",
+    "price": "200,000 DT",
+    "images": [
+      "/images/1/1.webp",
+      "/images/1/2.webp",
+      "/images/1/3.webp",
+      "/images/1/4.webp",
+      "/images/1/5.webp",
+      "/images/1/6.webp",
+      "/images/1/7.webp",
+      "/images/1/8.webp",
+      "/images/1/9.webp",
+      "/images/1/10.webp"
+    ],
+
+    "description": "Maison avec vue mer exceptionnelle, alliant charme ancien et modernité",
+    "longDescription": "🌊 Situation Unique & Privilégiée\nEmplacement : Sur la colline de la Médina de Sousse, à quelques mètres du Musée et proche de la Kasbah.\nAccès : Accès facile en voiture, avec un parking public à proximité immédiate.\nQuartier : Zone sécurisée et calme, proche du centre-ville, des zones touristiques, des écoles et universités.\n\n📐 Superficie & Caractéristiques Clés\nSuperficie du terrain : 96 m²\nSurface bâtie : 150 m² (R+1)\nFaçade : 12 mètres donnant directement sur la mer\nAccès : Deux entrées indépendantes + une porte de liaison interne\nVue : Panoramique sur la mer, le port et la Médina\n\n🏠 Description des Niveaux\nRez-de-chaussée – Charme Ancien :\n- Patio découvert\n- 2 chambres\n- Salon\n- Kitchenette\n- Salle d’eau\n- Débarras\n- Belles ouvertures avec vue sur la mer\n\nPremier étage – Moderne & Lumineux :\n- Salon avec vue mer imprenable\n- 2 chambres (dont une avec vue mer)\n- Cuisine panoramique exceptionnelle face à la mer\n- Salle de bain moderne\n- Escalier menant à une terrasse spectaculaire avec vue à 360° (mer, port, Médina) et espace de rangement\n\n💎 Points Forts Exclusifs\n- Vue incomparable et permanente sur la mer\n- Charme authentique allié à un étage moderne\n- Emplacement historique avec tous les avantages pratiques\n- Terrasse panoramique pour des moments uniques\n- Accès et stationnement facilités\n\nFrais de visite : 20 DT\nCommission d'agence : 2% en cas de vente",
     "bedrooms": 4,
-    "bathrooms": 3,
-    "area": 250
+    "bathrooms": 2,
+    "floor": 1,
+    "parking": true,
+    "area": 150,
+    "type": "maison",
+    "status": "sale",
+    "features": [
+      "Vue mer panoramique",
+      "Terrasse 360°",
+      "Charme ancien + étage moderne",
+      "Facilité de stationnement"
+    ],
+    "isFeatured": true
   },
   {
-    "id": 3,
-    "title": "Bureau spacieux à Kantaoui",
-    "location": "Kantaoui",
-    "type": "bureau",
-    "price": "1,200 TND / mois",
-    "images": ["/images/3/image1.webp", "/images/3/image2.webp"],
-    "description": "Bureau moderne situé au cœur de Kantaoui.",
-    "longDescription": "Ce bureau situé dans le prestigieux quartier (...).",
-    "bedrooms": 0,
+    "id": 145,
+    "ref": "R145",
+    "title": "À LOUER : S1 HAUT STANDING - RÉSIDENCE NEUVE",
+    "location": "Résidence neuve",
+    "price": "1150 DT / mois",
+    "images": [
+      "/images/2/1.webp",
+      "/images/2/2.webp",
+      "/images/2/3.webp",
+      "/images/2/4.webp"
+    ],
+    "description": "Appartement S1 haut standing, meublé, avec grande terrasse, situé dans une résidence neuve et calme.",
+    "longDescription": "🏢 Description du Logement\nType : Appartement S1 haut standing\nBâtiment : Résidence nouvellement construite\nTerrasse : Grande terrasse\nÉtat : Bien meublé et dans un environnement calme\nProfil recherché : Pour un bon profil de locataire\n\n💰 Location : 1150 DT par mois\n\nFrais de visite (obligatoires) : 20 DT\nCommission d'agence : 5% en cas de location",
+    "bedrooms": 1,
     "bathrooms": 1,
-    "area": 80
+    "floor": 0,
+    "parking": false,
+    "area": 50,
+    "type": "appartement",
+    "status": "rent",
+    "features": [
+      "Appartement meublé",
+      "Grande terrasse",
+      "Résidence calme et neuve"
+    ],
+    "isFeatured": true
   }
 ]

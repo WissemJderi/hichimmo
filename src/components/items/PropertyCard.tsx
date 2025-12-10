@@ -33,7 +33,9 @@ const PropertyCard = ({
       <div className="p-6">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
         <p className="mt-2 text-sm text-gray-800">{location}</p>
-        <p className="mt-2 text-sm text-gray-600">{description}</p>
+        <p className="mt-2 text-sm text-gray-600 whitespace-pre-line">
+          {description}
+        </p>
 
         <div className="mt-3 flex gap-6 text-sm text-gray-700">
           <span className="flex flex-row gap-2 items-center">

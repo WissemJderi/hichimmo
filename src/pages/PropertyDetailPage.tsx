@@ -8,10 +8,16 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import Breadcrumb from "../components/items/Breadcrumb";
 import PropertyCard from "../components/items/PropertyCard";
 import EmblaCarousel from "../components/items/Embla/EmblaCarousel";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 const PropertyDetailPage = () => {
+  const [expanded, setExpanded] = useState(false);
+  const maxChars = 300;
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
   const spanStyle =
     "flex flex-row gap-2 items-center bg-gray-200 py-2 px-4 rounded-md text-sm";
   const { id } = useParams();
@@ -40,7 +46,6 @@ const PropertyDetailPage = () => {
       )
       .slice(0, 7);
   }, [property]);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -59,7 +64,21 @@ const PropertyDetailPage = () => {
         </span>
         {property.location}
       </p>
-      <p className="mt-4 text-gray-600">{property.longDescription}</p>
+      <p className="font-medium mt-4 mb-2">Description:</p>
+      <p className="text-sm text-gray-600 whitespace-pre-line">
+        {expanded
+          ? property.longDescription
+          : property.longDescription.slice(0, maxChars) +
+            (property.longDescription.length > maxChars ? "..." : "")}
+      </p>
+      {property.longDescription.length > maxChars && (
+        <button
+          onClick={toggleExpanded}
+          className="mt-1 text-primary cursor-pointer hover:underline hover:text-primary-hover text-sm"
+        >
+          {expanded ? "Voir moins" : "Voir plus"}
+        </button>
+      )}
 
       <div className="mt-6 flex gap-4 text-gray-800 flex-wrap">
         {property.bedrooms > 0 && (
@@ -74,7 +93,6 @@ const PropertyDetailPage = () => {
           <FaRuler /> {property.area} m²
         </span>
       </div>
-
       <p className="mt-6 text-2xl font-semibold text-primary">
         {property.price}
       </p>
