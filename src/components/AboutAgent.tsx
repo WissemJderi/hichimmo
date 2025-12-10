@@ -38,7 +38,7 @@ const AboutAgent = () => {
             className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg lg:h-full"
           >
             <img
-              src="https://unsplash.com/photos/HfMCgqOLTyM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTR8fHJlYWwlMjBlc3RhdGUlMjBhZ2VudHxlbnwwfHx8fDE3NjQ4MzcwODJ8MA&force=true&w=1920"
+              src="/profile.webp"
               alt="Agent portrait"
               className="h-full w-full object-cover"
               width={1920}
