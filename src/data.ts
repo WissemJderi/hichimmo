@@ -21,4 +21,5 @@ export const locations = [
   "Sousse",
   "Sousse Jawhara",
   "Sousse Riadh",
+  "Sidi Bou Ali",
 ];
