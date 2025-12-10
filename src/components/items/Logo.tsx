@@ -5,9 +5,9 @@ const Logo = () => {
     <NavLink
       to="/"
       className="text-white font-bold text-lg"
-      aria-label="Retour à l'accueil - Hichem Immobilière"
+      aria-label="Retour à l'accueil - Dahech Immobilière"
     >
-      Hichem Immobilière
+      Dahech Immobilière
     </NavLink>
   );
 };

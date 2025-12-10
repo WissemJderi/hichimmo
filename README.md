@@ -1,4 +1,4 @@
-# Hichem Immo – Real Estate Listings App
+# Dahech Immo – Real Estate Listings App
 
 A modern, responsive real estate platform showcasing property listings with clean UI, smooth animations, and an optimized browsing experience.
 Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** to deliver fast performance and a professional real-estate interface.
@@ -39,16 +39,20 @@ Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** to
 
 ## Getting Started
 
-
 1. Clone the repo:
+
 ```bash
 git clone https://github.com/WissemJderi/hichimmo
 ```
+
 2. Install dependencies:
+
 ```bash
 npm install
 ```
+
 3. Run the development server:
+
 ```bash
 npm run dev
 ```

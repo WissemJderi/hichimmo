@@ -56,7 +56,7 @@ const Footer = () => {
         >
           <motion.div variants={columnVariants}>
             <h3 className="text-lg font-semibold text-white">
-              Hichem Immobilière
+              Dahech Immobilière
             </h3>
             <p className="mt-4 text-sm">
               Votre partenaire de confiance pour l’achat, la vente et la
@@ -140,8 +140,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400"
         >
-          © {new Date().getFullYear()} Hichem Immobilière. Tous droits
-          réservés.
+          © {new Date().getFullYear()} Dahech Immobilière. Tous droits réservés.
         </motion.div>
       </div>
     </motion.footer>
