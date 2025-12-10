@@ -32,7 +32,9 @@ const PropertyCard = ({
       <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
       <div className="p-6">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-        <p className="mt-2 text-sm text-gray-800">{location}</p>
+        <p className="mt-2 text-sm text-gray-800">
+          {location.charAt(0).toUpperCase() + location.slice(1)}
+        </p>
         <p className="mt-2 text-sm text-gray-600 whitespace-pre-line">
           {description}
         </p>
