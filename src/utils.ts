@@ -5,3 +5,7 @@ export const formatNumber = (phoneNumber: string): string => {
   const third = phoneNumber.slice(5, 8);
   return `${first} ${second} ${third}`;
 };
+
+export const titleCase = (location: string): string => {
+  return location.charAt(0).toUpperCase() + location.slice(1);
+};

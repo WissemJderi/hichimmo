@@ -10,6 +10,7 @@ import PropertyCard from "../components/items/PropertyCard";
 import EmblaCarousel from "../components/items/Embla/EmblaCarousel";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { titleCase } from "../utils";
 
 const PropertyDetailPage = () => {
   const [expanded, setExpanded] = useState(false);
@@ -62,7 +63,7 @@ const PropertyDetailPage = () => {
         <span>
           <FaMapMarkerAlt />
         </span>
-        {property.location}
+        {titleCase(property.location)}
       </p>
       <p className="font-medium mt-4 mb-2">Description:</p>
       <p className="text-sm text-gray-600 whitespace-pre-line">

@@ -1,1 +1,208 @@
-[]
+[
+  {
+    "id": 146,
+    "ref": "R146",
+    "title": "À VENDRE – MAISON VUE MER EXCEPTIONNELLE",
+    "location": "sousse",
+    "price": "200,000 DT",
+    "images": [
+      "/images/146/1.webp",
+      "/images/146/2.webp",
+      "/images/146/3.webp",
+      "/images/146/4.webp",
+      "/images/146/5.webp",
+      "/images/146/6.webp",
+      "/images/146/7.webp",
+      "/images/146/8.webp",
+      "/images/146/9.webp",
+      "/images/146/10.webp"
+    ],
+
+    "description": "Maison avec vue mer exceptionnelle, alliant charme ancien et modernité",
+    "longDescription": "🌊 Situation Unique & Privilégiée\nEmplacement : Sur la colline de la Médina de Sousse, à quelques mètres du Musée et proche de la Kasbah.\nAccès : Accès facile en voiture, avec un parking public à proximité immédiate.\nQuartier : Zone sécurisée et calme, proche du centre-ville, des zones touristiques, des écoles et universités.\n\n📐 Superficie & Caractéristiques Clés\nSuperficie du terrain : 96 m²\nSurface bâtie : 150 m² (R+1)\nFaçade : 12 mètres donnant directement sur la mer\nAccès : Deux entrées indépendantes + une porte de liaison interne\nVue : Panoramique sur la mer, le port et la Médina\n\n🏠 Description des Niveaux\nRez-de-chaussée – Charme Ancien :\n- Patio découvert\n- 2 chambres\n- Salon\n- Kitchenette\n- Salle d’eau\n- Débarras\n- Belles ouvertures avec vue sur la mer\n\nPremier étage – Moderne & Lumineux :\n- Salon avec vue mer imprenable\n- 2 chambres (dont une avec vue mer)\n- Cuisine panoramique exceptionnelle face à la mer\n- Salle de bain moderne\n- Escalier menant à une terrasse spectaculaire avec vue à 360° (mer, port, Médina) et espace de rangement\n\n💎 Points Forts Exclusifs\n- Vue incomparable et permanente sur la mer\n- Charme authentique allié à un étage moderne\n- Emplacement historique avec tous les avantages pratiques\n- Terrasse panoramique pour des moments uniques\n- Accès et stationnement facilités\n\nFrais de visite : 20 DT\nCommission d'agence : 2% en cas de vente",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "floor": 1,
+    "parking": true,
+    "area": 150,
+    "type": "maison",
+    "status": "sale",
+    "features": [
+      "Vue mer panoramique",
+      "Terrasse 360°",
+      "Charme ancien + étage moderne",
+      "Facilité de stationnement"
+    ],
+    "isFeatured": true
+  },
+  {
+    "id": 145,
+    "ref": "R145",
+    "title": "À LOUER : S1 HAUT STANDING - RÉSIDENCE NEUVE",
+    "location": "sousse",
+    "price": "1150 DT / mois",
+    "images": [
+      "/images/145/1.webp",
+      "/images/145/2.webp",
+      "/images/145/3.webp",
+      "/images/145/4.webp"
+    ],
+    "description": "Appartement S1 haut standing, meublé, avec grande terrasse, situé dans une résidence neuve et calme.",
+    "longDescription": "🏢 Description du Logement\nType : Appartement S1 haut standing\nBâtiment : Résidence nouvellement construite\nTerrasse : Grande terrasse\nÉtat : Bien meublé et dans un environnement calme\nProfil recherché : Pour un bon profil de locataire\n\n💰 Location : 1150 DT par mois\n\nFrais de visite (obligatoires) : 20 DT\nCommission d'agence : 5% en cas de location",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "floor": 0,
+    "parking": false,
+    "area": 50,
+    "type": "appartement",
+    "status": "rent",
+    "features": [
+      "Appartement meublé",
+      "Grande terrasse",
+      "Résidence calme et neuve"
+    ],
+    "isFeatured": true
+  },
+  {
+    "id": 144,
+    "ref": "R144",
+    "title": "À LOUER : APPARTEMENT S1 HAUT DE GAMME - SAHLOUL 4",
+    "location": "sahloul",
+    "price": "1100 DT / mois",
+    "images": [
+      "/images/144/1.webp",
+      "/images/144/2.webp",
+      "/images/144/3.webp",
+      "/images/144/4.webp",
+      "/images/144/5.webp"
+    ],
+    "description": "Appartement S1 haut standing, meublé, lumineux, dans résidence calme à Sahloul 4.",
+    "longDescription": "✨ À LOUER : APPARTEMENT S1 HAUT DE GAMME - SAHLOUL 4 ✨\nRéférence : R144\n🏢 Aperçu de l'Appartement\nDétail Spécification\nType Appartement S1\nSurface 65 m²\nLocalisation Sahloul 4\nClimatisation ✅ Système présent\nChauffage ✅ Chauffage central\n\n🏠 Description des Pièces\nL'appartement est composé de pièces soigneusement aménagées pour un confort optimal :\n· 🛋️ Salon : Spacieux, lumineux et décoré avec goût.\n· 🍳 Cuisine : Moderne et entièrement équipée.\n· 🛏️ Chambre : Confortable avec rangements intégrés.\n· 🚿 Salle de bain : Élégante, fonctionnelle et bien agencée.\n\nℹ️ Informations Pratiques & Contact\n· Loyer : À confirmer\n· Frais de visite : 20 DT (obligatoires)\n· Commission d'agence : 5% en cas de location\n\nMerci pour votre visite, cher client ! Nous espérons que cet appartement correspondra à vos attentes.",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "floor": 0,
+    "area": 65,
+    "type": "appartement",
+    "status": "rent",
+    "isFeatured": true
+  },
+  {
+    "id": 137,
+    "ref": "R137",
+    "title": "À LOUER : APPARTEMENT S2 HAUT STANDING – SAHLOUL",
+    "location": "sahloul",
+    "price": "À confirmer",
+    "images": [
+      "/images/137/1.webp",
+      "/images/137/2.webp",
+      "/images/137/3.webp",
+      "/images/137/4.webp",
+      "/images/137/5.webp",
+      "/images/137/6.webp"
+    ],
+    "description": "Appartement S2 moderne, propre, au 3ᵉ étage avec ascenseur, dans une résidence calme à Sahloul.",
+    "longDescription": "✨ S2 HAUT STANDING – SAHLOUL ✨\n(À 2 minutes de l'Hôpital)\nRéférence : R137\n🏡 Description Générale\n· Type : Appartement S2 moderne et très propre\n· Étage : 3ᵉ étage avec ascenseur\n· Environnement : Résidence calme et sécurisée\n· Public visé : Voyageurs, médecins, infirmiers, étudiants, couples, petites familles\n\n🌟 Équipements & Services\n· ❄️ Climatisation\n· 🔥 Chauffage central\n· 🚗 Parking privé au sous-sol\n· 🛡️ Résidence sécurisée\n· 🧼 Propreté irréprochable\n\n📍 Localisation Privilégiée\n· 🏥 À 2 minutes de l’Hôpital Sahloul\n· ☕ Proche cafés, restaurants, supermarchés\n· 🚌 Accès transports facilité\n\n🗓️ Modalités de Location\n· Flexibilité : Location à la nuitée ou à la semaine\n· Idéal pour : Séjours courts, déplacements professionnels, visites médicales\n\n💰 Conditions Agence\n· Frais de visite : 20 DT\n· Commission agence : 5% en cas de location\n\nMerci beaucoup pour votre visite, cher client !\nAppartement moderne et fonctionnel pour un séjour confortable et bien situé ! 🏡💫",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 3,
+    "area": 0,
+    "type": "appartement",
+    "status": "rent",
+    "isFeatured": true
+  },
+  {
+    "id": 134,
+    "ref": "R134",
+    "title": "À VENDRE : BUREAU PROFESSIONNEL - SAHLOUL",
+    "location": "sahloul",
+    "price": "250 000 DT",
+    "images": [
+      "/images/134/1.webp",
+      "/images/134/2.webp",
+      "/images/134/3.webp",
+      "/images/134/4.webp",
+      "/images/134/5.webp"
+    ],
+    "description": "Bureau professionnel en excellent état, prêt à l'exploitation immédiate, situé au 1er étage à Sahloul.",
+    "longDescription": "✨ À VENDRE : BUREAU PROFESSIONNEL - SAHLOUL ✨\nRéférence : R134\n🏢 DESCRIPTION GÉNÉRALE\n· Type : Bureau professionnel\n· État : Excellent, prêt à l'exploitation immédiate ✅\n· Étage : 1er étage\n· Localisation : Sahloul - Boulevard Yasser Arafat\n· Proximité : À proximité immédiate de l'Hôpital Sahloul 🏥\n\n📐 COMPOSITION & SURFACES\n· Superficie titre : 65 m²\n· Superficie contrat : 100 m²\n· Agencement :\n  · 🚪 Espace d'accueil\n  · 🪑 2 bureaux privés\n  · 🍽️ Kitchenette\n  · 🚻 Sanitaires\n· Confort :\n  · ❄️ 2 climatiseurs\n  · 💡 Bonne luminosité naturelle\n\n💼 IDÉAL POUR\n· 👨‍⚕️ Cabinet médical\n· ⚖️ Avocat / Notaire\n· 📐 Architecte / Bureau d'études\n· 🏢 Société de services\n\n💰 CONDITIONS FINANCIÈRES\n· Prix demandé : 250 000 DT\n· Négociation : Prix raisonnablement négociable 💬\n· Frais de visite : 20 DT\n· Commission agence : 2% en cas d'achat\n\n🌟 AVANTAGES EXCLUSIFS\n✅ Emplacement stratégique – axe majeur, près de l'hôpital\n✅ Bâtiment professionnel – environnement adapté\n✅ Prêt à l'emploi – aménagements de qualité\n✅ Surface généreuse – deux références disponibles\n\nMerci beaucoup pour votre visite, cher client ! 🙏\nUn espace de travail clé en main pour professionnels exigeants !💼🚀",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 1,
+    "area": 100,
+    "type": "bureau",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 133,
+    "ref": "R133",
+    "title": "À VENDRE : APPARTEMENT S+2 - KHZEMA",
+    "location": "khzema",
+    "price": "230 000 DT",
+    "images": [
+      "/images/133/1.webp",
+      "/images/133/2.webp",
+      "/images/133/3.webp",
+      "/images/133/4.webp",
+      "/images/133/5.webp",
+      "/images/133/6.webp"
+    ],
+    "description": "Appartement S+2 en très bon état, situé au 2ème étage sans ascenseur, d'une superficie de 100 m² à Khzema.",
+    "longDescription": "✨ À VENDRE : APPARTEMENT S+2 - KHZEMA ✨\nRéférence : R133\n🏠 DESCRIPTION GÉNÉRALE\n· Type : Appartement S+2\n· Étage : 2ème étage (sans ascenseur)\n· État : Très bon état ✅\n· Superficie : 100 m²\n· Localisation : Khzema\n· Proximité :\n  · 🚶 À 10 minutes à pied de Sahloul 4\n  · 🛒 À proximité de toutes les commodités nécessaires\n\n📄 SITUATION JURIDIQUE\n· Titre de propriété : Bleu disponible ✅\n· Situation : Régulière\n\n💰 CONDITIONS FINANCIÈRES\n· Prix de vente : 230 MDT (légèrement négociable) 💵\n· Frais de visite : 20 DT\n· Commission d'agence : 2% en cas d'achat\n\n🌟 POINTS FORTS\n✅ Excellent état – prêt à emménager\n✅ Emplacement ultra pratique – toutes commodités à proximité\n✅ Proche de Sahloul 4 – accès rapide à un quartier dynamique\n✅ Titre bleu disponible – transaction sécurisée et transparente\n\nMerci beaucoup pour votre visite, cher client !\nUne excellente opportunité dans un quartier pratique !🏡💫",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 2,
+    "area": 100,
+    "type": "appartement",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 129,
+    "ref": "R129",
+    "title": "À LOUER : APPARTEMENT S+2 - SAHLOUL 4",
+    "location": "sahloul",
+    "price": "800 DT / mois",
+    "images": [
+      "/images/129/1.webp",
+      "/images/129/2.webp",
+      "/images/129/3.webp",
+      "/images/129/4.webp"
+    ],
+    "description": "Appartement S+2 entretenu, 1er étage, chauffage central et parking, Sahloul 4.",
+    "longDescription": "✨ À LOUER : APPARTEMENT S+2 - SAHLOUL 4 ✨\nRéférence : R129\n🏠 DESCRIPTION GÉNÉRALE\n· Type : Appartement S+2\n· Surface : 70 m²\n· Étage : 1er étage\n· Localisation : Sahloul 4\n· Chauffage : Central 🔥\n· Parking sou sol\n800 dinar location mensuel\n\n🌟 CARACTÉRISTIQUES\n✅ Appartement bien entretenu\n✅ Chauffage central inclus\n✅ Emplacement pratique à Sahloul 4\n✅ Surface agréable de 70 m²\n\n💰 CONDITIONS FINANCIÈRES\n· Frais de visite : 20 DT\n· Commission agence : 5% en cas de location\n\n",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 1,
+    "area": 70,
+    "type": "appartement",
+    "status": "rent",
+    "isFeatured": true
+  },
+  {
+    "id": 128,
+    "ref": "R128",
+    "title": "À LOUER : APPARTEMENT MEUBLÉ S+3 - KHZAMA",
+    "location": "khzama",
+    "price": "1500 DT / mois",
+    "images": [
+      "/images/128/1.webp",
+      "/images/128/2.webp",
+      "/images/128/3.webp",
+      "/images/128/4.webp",
+      "/images/128/5.webp",
+      "/images/128/6.webp",
+      "/images/128/7.webp",
+      "/images/128/8.webp"
+    ],
+    "description": "Appartement meublé S+3 avec vue mer, situé au 5ème étage avec ascenseur à Khezama, rue d'Orange.",
+    "longDescription": "✨ À LOUER : APPARTEMENT MEUBLÉ S+3 - KHEZAMA ✨\nRéférence : R128\n🏠 DESCRIPTION GÉNÉRALE\n· Type : Appartement meublé S+3 🛋️\n· Étage : 5ème étage avec ascenseur 🛗\n· Vue : Mer 🌊\n· Localisation : Khezama, rue d'Orange 🗺️\n\n🌟 ÉQUIPEMENTS ET SERVICES\n· 3 balcons avec vue mer 🌴\n· 2 climatiseurs ❄️\n· Chauffage central au gaz naturel 🔥\n· Parking privé inclus 🚗\n· Ascenseur 🛗\nPrix location 1500 dinar légèrement négociable\n\n💰 CONDITIONS\n· Frais de visite : 20 DT\n· Commission agence : 5% en cas de location\n\nMerci pour votre visite et votre confiance ! 🙏\nAppartement exceptionnel avec vue mer ! 🌊💫",
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "floor": 5,
+    "area": 0,
+    "type": "appartement",
+    "status": "rent",
+    "isFeatured": true
+  }
+]
