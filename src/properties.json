@@ -466,5 +466,119 @@
     "type": "studio",
     "status": "appartement",
     "isFeatured": true
+  },
+  {
+    "id": 115,
+    "ref": "R115",
+    "title": "À VENDRE : 2 APPARTEMENTS S+2 À AKOUDA",
+    "location": "akouda",
+    "price": "210 000 DT par appartement",
+    "images": [
+      "/images/115/1.webp",
+      "/images/115/2.webp",
+      "/images/115/3.webp",
+      "/images/115/4.webp",
+      "/images/115/5.webp",
+      "/images/115/6.webp"
+    ],
+    "description": "Deux appartements S+2 de 115 m² chacun, situés à Akouda, proches de toutes commodités.",
+    "longDescription": "À Vendre à Akouda : 2 Appartements S+2 (115 m² chacun)\n\nEmplacement de choix, proche de toutes commodités !\nSituation : Situés en deuxième position de la route principale, offrant un accès facile et une tranquillité appréciable.\n\nType & Superficie : Deux appartements de type S+2, d'une superficie de 115 m² chacun.\nÉtage :\n· Premier étage\n· Deuxième étage\n\nCommodités :\n· Compteurs gaz, électricité (STEG) et eau (SONEDE) indépendants pour chaque appartement.\n\nEmplacement Idéal :\n· Parfait pour l'habitation, dans une zone très pratique.\n· Proximité immédiate de toutes les commodités essentielles : pharmacies, magasins, supermarchés, souk (marché), boulangeries, et accès facile aux transports en commun.\n\nPrix : 210 000 DT par appartement (légèrement négociable).\n\nContact : Pour plus de détails et organiser une visite, contactez le 98 622 442.\n\nAgence Immobilière :\n· Frais de visite : 20 DT.\n· Honoraires en cas d'achat : 2% du prix de vente.\n\nMerci de votre visite ! Nous sommes à votre disposition.",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 1,
+    "area": 115,
+    "type": "appartement",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 116,
+    "ref": "R116",
+    "title": "À VENDRE : TERRAIN AGRICOLE 17 000 m² - KALAA KEBIRA",
+    "location": "kalaa kebira",
+    "price": "À confirmer",
+    "images": [
+      "/images/116/1.webp",
+      "/images/116/2.webp",
+      "/images/116/3.webp",
+      "/images/116/4.webp",
+      "/images/116/5.webp"
+    ],
+    "description": "Terrain agricole de 17 000 m² avec maison de campagne, arbres fruitiers et équipements agricoles à Kalaa Kebira.",
+    "longDescription": "À vendre : Terrain agricole de 17 000 m² avec titre foncier situé à Kalaa Kebira, accessible par l'autoroute. Plusieurs arbres fruitiers (oliviers, grenadiers, figuiers, raisins, amandiers, citronniers 4 saisons, mandarines, etc.).\nMaison de campagne de 50 m², sondage (puits).\nÉlectricité 380 V, bassin de 85 m³, installation de goutte à goutte sur toute la surface, grande terrasse en tuiles avec vue sur la ville de Kalaa Kebira. Magasin pour produits agricoles.\nDivers.\nCommission agence immobilière : 20 dinars frais de visite.\n2% en cas d'achat.",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "floor": 1,
+    "area": 17000,
+    "type": "terrain",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 87,
+    "ref": "R087",
+    "title": "À VENDRE : APPARTEMENT S2 - SAHLOUL 4",
+    "location": "sahloul",
+    "price": "300 000 DT",
+    "images": [
+      "/images/87/1.webp",
+      "/images/87/2.webp",
+      "/images/87/3.webp",
+      "/images/87/4.webp"
+    ],
+    "description": "Appartement S2 neuf de 99 m² au 4ème étage avec ascenseur, situé à Sahloul 4.",
+    "longDescription": "Vente – Appartement S2 à Sahloul 4\nRéférence : R087\n\nNous proposons à la vente un appartement S2 situé à Sahloul 4, dans un quartier calme, résidentiel et bien desservi.\n• Superficie : 99 m²\n• Composition :\n  • Salon lumineux\n  • Deux chambres\n  • Cuisine équipée avec séchoir\n  • Salle de bain\n  • Balcon\n  • Résidence sécurisée avec ascenseur\n\nType de bien : Appartement\nÉtat : Neuf\nAnnée de construction : Moins d'un an\nÉtage : 4ème\nRevêtement de sol : Marbre\n\nCaractéristiques : 99 m², 3 pièces, 2 chambres, 1 salle de bain, terrasse, ascenseur, concierge, antenne parabolique, climatisation, chauffage central, sécurité, double vitrage, porte blindée, cuisine équipée, four.\n\nPrix : 300.000 MDT\nCommission d'agence : 20 dinars (frais de visite)\n2% en cas d'achat.\n\nMerci beaucoup de votre visite, cher client.",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 4,
+    "area": 99,
+    "type": "appartement",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 83,
+    "ref": "R083",
+    "title": "À VENDRE : MAGNIFIQUE APPARTEMENT MODERNE - SOUSSE (ROUTE CEINTURE, ZONE ISET)",
+    "location": "sousse",
+    "price": "255 000 DT",
+    "images": [
+      "/images/83/1.webp",
+      "/images/83/2.webp",
+      "/images/83/3.webp",
+      "/images/83/4.webp",
+      "/images/83/5.webp"
+    ],
+    "description": "Appartement moderne S2 de 103 m², construit en 2019, situé à Sousse Route Ceinture Zone ISET.",
+    "longDescription": "À Vendre : Magnifique Appartement Moderne à Sousse (Route Ceinture, Zone ISET)\nRéférence : R083\n\nDécouvrez cet appartement spacieux et lumineux, idéalement situé à Sousse, dans un immeuble récent (2019). Profitez d'un cadre de vie agréable et sécurisé, à proximité de toutes commodités.\n\nEmplacement : Route Ceinture, Zone ISET, Sousse\nAnnée de construction : 2019\nSuperficie : 103 m²\n\nComposition :\n· Grand salon spacieux et accueillant\n· Balcon\n· 2 chambres à coucher confortables\n· Cuisine équipée (4 plaques chauffantes, installations lave-vaisselle)\n· Séchoir pratique\n· Salle de bain moderne\n· Installations pour machine à laver\n\nÉquipements :\n· Climatiseur pour votre confort\n· Place de parking privative (en option)\n· Caméras de surveillance pour votre sécurité\n· Concierge pour votre tranquillité\n\nOptions et Prix :\n· Appartement : 255 000 Dinars Tunisiens\n· Place de Parking (en sous-sol) : 20 000 Dinars Tunisiens\n· Meubles (en option) : 5 000 Dinars Tunisiens (certains meubles inclus)\n\nConditions de visite et commission :\n· Frais de visite : 20 Dinars Tunisiens (remboursables en cas d'achat)\n· Commission d'agence (en cas d'achat) : 2%",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 4,
+    "area": 103,
+    "type": "appartement",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 75,
+    "ref": "R075",
+    "title": "À LOUER : BUREAU À SAHLOUL - PROCHE ROND POINT SHOES CENTER",
+    "location": "sahloul",
+    "price": "900 DT / mois",
+    "images": [
+      "/images/75/1.webp",
+      "/images/75/2.webp",
+      "/images/75/3.webp",
+      "/images/75/4.webp"
+    ],
+    "description": "Bureau de 3 pièces avec accueil, archives, kitchenette et toilettes, situé au 1er étage avec ascenseur à Sahloul.",
+    "longDescription": "Un bureau situé à Sahloul, à proximité du Rond point shoes center, comprenant un accueil, 3 bureaux, des archives, des toilettes et une kitchenette.\nRéférence : R075\n\n1er étage d'un immeuble avec ascenseur.\n\nLoyer : 900 Dinars par mois (+ syndic).\n\nPour plus de détails, veuillez contacter le 98 622 442.\n\nCommission d'agence : 20 Dinars (frais de visite).\n5 % en cas de location.\n\nMerci de votre visite, cher client.",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "floor": 1,
+    "area": 0,
+    "type": "bureau",
+    "status": "rent",
+    "isFeatured": true
   }
 ]
