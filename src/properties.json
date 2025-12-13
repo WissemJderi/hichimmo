@@ -580,5 +580,122 @@
     "type": "bureau",
     "status": "rent",
     "isFeatured": true
+  },
+  {
+    "id": 7,
+    "ref": "R07",
+    "title": "À VENDRE : VILLA DE PRESTIGE - SAHLOUL 4",
+    "location": "sahloul",
+    "price": "630 000 DT",
+    "images": [
+      "/images/7/1.webp",
+      "/images/7/2.webp",
+      "/images/7/3.webp",
+      "/images/7/4.webp",
+      "/images/7/5.webp",
+      "/images/7/6.webp",
+      "/images/7/7.webp",
+      "/images/7/8.webp"
+    ],
+    "description": "Villa contemporaine de 210 m², élégante et sécurisée, située dans le quartier résidentiel de Sahloul 4.",
+    "longDescription": "✨ À VENDRE - VILLA DE PRESTIGE - SAHLOUL 4 ✨\nRéférence : R07\n\n🏡 Aperçu Exclusif\nOffrez-vous l'exceptionnelle ! Une magnifique villa contemporaine alliant élégance, tranquillité et sécurité absolue dans le quartier résidentiel prisé de Sahloul 4.\n\n📐 Caractéristiques Principales\n· Superficie : 210 m²\n· Situation : Quartier très calme et résidentiel sécurisé\n· État Juridique : Dossier parfait - Titre Bleu disponible et régulier ✅\n· Prix de Vente : 630 000 000 DT (Négociable pour acheteur sérieux)\n\n🌟 Pourquoi Cette Villa Est Exceptionnelle ?\n✅ Architecture contemporaine et élégante\n✅ Environnement sécurisé et paisible, idéal pour une famille\n✅ Situation juridique irréprochable avec Titre Bleu\n✅ Prix ouvert à la discussion pour les projets sérieux\n\n💰 Modalités des Visites & Transaction\n· Frais de visite : 20 DT (Déduits des honoraires en cas d'achat)\n· Honoraires d'Agence : 2% TTC à la charge de l'acquéreur, uniquement en cas de transaction conclue\n\nSoyez les bienvenus, chers clients. Nous sommes à votre entière disposition pour vous accompagner dans ce projet d'acquisition prestigieux. 🤝\nMerci pour votre visite. 🙏",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "floor": 2,
+    "area": 210,
+    "type": "villa",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 15,
+    "ref": "R015",
+    "title": "À VENDRE : VILLA INDÉPENDANTE - KALLA SGHIRA",
+    "location": "kalaa sghira",
+    "price": "500 000 DT",
+    "images": [
+      "/images/15/1.webp",
+      "/images/15/2.webp",
+      "/images/15/3.webp",
+      "/images/15/4.webp"
+    ],
+    "description": "Villa indépendante de 204 m² avec jardin, garage et terrasse, située à Kalla Sghira dans un environnement calme.",
+    "longDescription": "Villa indépendante située à Kalla Sghira\nRéférence : R015\n\n- Type : Résidence individuelle\n- Superficie : 204 m² (dont 130 m² couverts + 130 m² étage)\n\nComposition :\n· 4 chambres\n· 2 salons\n· 2 balcons\n· 1 bloc sanitaire + 1 cabine de douche\n· 1 garage (devant le jardin)\n· 1 terrasse (sur le côté)\n\nÉquipements & Services :\n· Électricité : Oui\n· Eau : Oui\n· Gaz : Non (pas de bouteilles de gaz)\n· Assainissement : Non raccordé à l'ONAS\n\nLocalisation :\n· Kalla Sghira zone mosquée Houda\n· Éloignée de la route principale (environnement calme)\n\nPrix : 550.000 MDT\n\nConditions de Vente :\n· Frais de visite : 20 dinars (non remboursables)\n· Commission agence : 2% du prix d'achat (payable uniquement en cas de transaction)",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "floor": 2,
+    "area": 204,
+    "type": "villa",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 16,
+    "ref": "R016",
+    "title": "À VENDRE : VILLA S3 LUXUEUSE RDC INDÉPENDANTE",
+    "location": "kalaa sghira",
+    "price": "600 000",
+    "images": [
+      "/images/16/1.webp",
+      "/images/16/2.webp",
+      "/images/16/3.webp",
+      "/images/16/4.webp",
+      "/images/16/5.webp",
+      "/images/16/6.webp"
+    ],
+    "description": "Villa S3 luxueuse de 280 m² sur terrain de 460 m², située à Kalaa Sghira Charguia.",
+    "longDescription": "À Vendre - Villa S3 Luxueuse RDC Indépendante\nRéférence : R016\n\n- Superficie du terrain : 460 m²\n- Superficie habitable : 280 m²\n- Localisation : Kalaa Sghira, Charguia (Chraki)\n- Titre foncier : Individuel\n- Vocation : R+4 (possible construction jusqu'à 4 étages)\n\nPrix : 600 millions de dinars (négociable)\nContact : 98 622 442\n\nConditions :\n- Frais de visite : 20 DT (commission intermédiaire)\n- Commission d'agence en cas d'achat : 2% du prix de vente\n\nMerci pour votre visite, cher client !",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "floor": 1,
+    "area": 460,
+    "type": "villa",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 18,
+    "ref": "R018",
+    "title": "À VENDRE : VILLA CHARMANTE – PROXIMITÉ EPI & HÔPITAL SAHLOUL",
+    "location": "sahloul",
+    "price": "550 000 DT",
+    "images": [
+      "/images/18/1.webp",
+      "/images/18/2.webp",
+      "/images/18/3.webp",
+      "/images/18/4.webp"
+    ],
+    "description": "Villa charmante de 180 m² habitables sur un terrain de 300 m², située à proximité de l’EPI et de l’Hôpital Universitaire Sahloul.",
+    "longDescription": "🏡 VILLA CHARMANTE À VENDRE – PROXIMITÉ EPI & HÔPITAL SAHLOUL 🏡\nRéférence : R018\n\n📍 Localisation : Située dans un quartier privilégié, à proximité immédiate de l’EPI et à 2 minutes de l’Hôpital Universitaire Sahloul. Accès facile aux commodités (écoles, transports, commerces).\n\n📐 Surface :\n· Totale : 300 m²\n· Habitable : 180 m²\n\n🏠 Composition :\n✔ Salon spacieux + Salle à manger séparée\n✔ 4 chambres lumineuses et aérées\n✔ Cuisine moderne et fonctionnelle\n✔ Cour extérieure aménagée et grand jardin arboré\n✔ Tous les papiers en règle (prêt pour transaction)\n\nPrix villa : 550.000 MDT\n\n✨ Points Forts :\n· Environnement calme et sécurisé\n· Résidence bien entretenue avec espaces verts\n· Opportunité rare dans ce secteur très demandé !\n\n💵 Conditions :\n· Frais de visite : 20 DT (non déduits en cas d’achat)\n· Commission agence : 2% du prix de vente",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "floor": 2,
+    "area": 300,
+    "type": "villa",
+    "status": "sale",
+    "isFeatured": true
+  },
+  {
+    "id": 28,
+    "ref": "R028",
+    "title": "À VENDRE : MAISON À HAMMAM SOUSSE – CLEOPÂTRE, CÔTÉ MER",
+    "location": "hammam sousse",
+    "price": "420 000 DT",
+    "images": [
+      "/images/28/1.webp",
+      "/images/28/2.webp",
+      "/images/28/3.webp",
+      "/images/28/4.webp",
+      "/images/28/5.webp"
+    ],
+    "description": "Maison de deux niveaux (RDC + 1er étage) sur un terrain de 113 m², située à Hammam Sousse Cleopâtre, proche de la mer.",
+    "longDescription": "À vendre : Maison à Hammam Sousse, Cleopâtre, Côté Mer 🌊🏡\nRéférence : R028\n\nNous vous proposons une maison située à Hammam Sousse, dans le quartier de Cleopâtre, à proximité de la mer. Cette propriété se compose de deux niveaux : rez-de-chaussée et premier étage.\n\nDétails de la maison :\n· Superficie du terrain : 113 m²\n· Compteurs : Compteurs STEG, gaz et SONED indépendants\n· Prix : 420 millions\n· Titre : Titre bleu disponible\n· Emplacement : À proximité de toutes les commodités nécessaires (poste, banques, magasins)\n· Accessibilité : Accès facile pour tous les moyens de transport\n\nConditions :\n· Commission intermédiaire : 10 dinars pour les frais de visite\n· En cas d'achat : 2 % du prix\n\nMerci d'avance, cher client ! Ne manquez pas cette belle opportunité !",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "floor": 2,
+    "area": 113,
+    "type": "maison",
+    "status": "sale",
+    "isFeatured": true
   }
 ]
