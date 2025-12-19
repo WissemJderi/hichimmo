@@ -22,7 +22,7 @@ const footerLinks = [
   {
     text: "Facebook",
     icon: <FaFacebook aria-hidden="true" />,
-    href: "https://facebook.com/yourpage",
+    href: "https://www.facebook.com/profile.php?id=61555716952991",
   },
 ];
 
