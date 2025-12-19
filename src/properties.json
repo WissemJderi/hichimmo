@@ -449,7 +449,7 @@
     "id": 103,
     "ref": "R103",
     "title": "À LOUER : CHARMANT STUDIO MEUBLÉ – KHZEMA ZONE RUE D'ORANGE",
-    "location": "khzema zone rue d'orange",
+    "location": "khzema",
     "price": "900 DT / mois",
     "images": [
       "/images/103/1.webp",
@@ -463,8 +463,8 @@
     "bathrooms": 1,
     "floor": 2,
     "area": 0,
-    "type": "studio",
-    "status": "appartement",
+    "type": "appartement",
+    "status": "rent",
     "isFeatured": true
   },
   {

@@ -1,6 +1,5 @@
 import { FaFacebook, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
 import { formatNumber, phoneNumber } from "../utils";
 import { motion } from "framer-motion";
@@ -11,11 +10,6 @@ const contactInfo = [
     text: `+216 ${formatNumber(phoneNumber)}`,
     icon: <FaPhone aria-hidden="true" />,
     href: `tel:+216${phoneNumber}`,
-  },
-  {
-    text: "contact@agence.com",
-    icon: <MdEmail aria-hidden="true" />,
-    href: `mailto:contact@agence.com`,
   },
 ];
 
