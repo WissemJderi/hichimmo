@@ -9,6 +9,7 @@ export const properties = [
   "Usine",
 ];
 export const locations = [
+  "Voir tout",
   "Akouda",
   "Chatt Mariem",
   "Hammam Sousse",

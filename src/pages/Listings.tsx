@@ -11,12 +11,18 @@ const Listings = () => {
 
   const filteredListings = useMemo(() => {
     return properties.filter((property) => {
-      const propertyType = property.type?.toLowerCase() || "";
-      const propertyLocation = property.location?.toLowerCase() || "";
-      return (
-        (!type || propertyType === type.toLowerCase()) &&
-        (!location || propertyLocation === location.toLowerCase())
-      );
+      const propertyType = property.type?.toLowerCase();
+      const propertyLocation = property.location?.toLowerCase();
+
+      const typeFilter =
+        !type || type === "all" || propertyType === type.toLowerCase();
+
+      const locationFilter =
+        !location ||
+        location === "Voir tout" ||
+        propertyLocation === location.toLowerCase();
+
+      return typeFilter && locationFilter;
     });
   }, [type, location]);
   return (
