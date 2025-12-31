@@ -42,7 +42,10 @@ const Listings = () => {
       <motion.div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
         {filteredListings.length > 0 ? (
           filteredListings.map((property) => (
-            <PropertyCard key={property.id} {...property} />
+            <PropertyCard
+              key={`${property.title} ${property.id}`}
+              {...property}
+            />
           ))
         ) : (
           <motion.p
