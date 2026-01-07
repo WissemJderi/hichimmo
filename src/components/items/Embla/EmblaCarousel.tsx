@@ -51,10 +51,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls flex justify-center mt-4 space-x-4">
-        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-      </div>
+      {slides.length > 1 ? (
+        <div className="embla__controls flex justify-center mt-4 space-x-4">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
+      ) : null}
     </section>
   );
 };
