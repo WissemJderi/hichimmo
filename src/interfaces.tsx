@@ -13,7 +13,7 @@ export interface propertyCardProps {
   images: string[];
   description: string;
   longDescription: string;
-  bedrooms?: number;
+  bedrooms?: any;
   bathrooms?: number;
   floor?: number;
   parking?: boolean;
