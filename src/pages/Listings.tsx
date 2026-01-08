@@ -25,6 +25,7 @@ const Listings = () => {
       return typeFilter && locationFilter;
     });
   }, [type, location]);
+
   return (
     <motion.div
       className="mx-auto max-w-7xl px-6 py-16"
@@ -39,12 +40,14 @@ const Listings = () => {
       >
         Découvrez Nos Propriétés
       </motion.h2>
+
       <motion.div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
         {filteredListings.length > 0 ? (
           filteredListings.map((property) => (
             <PropertyCard
               key={`${property.title} ${property.id}`}
               {...property}
+              area={property.area ?? undefined}
             />
           ))
         ) : (

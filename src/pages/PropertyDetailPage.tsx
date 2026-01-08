@@ -88,12 +88,17 @@ const PropertyDetailPage = () => {
             {property.bedrooms > 1 ? "s" : ""}
           </span>
         )}
-        <span className={`${spanStyle}`}>
-          <MdBathroom /> {property.bathrooms} salles de bain
-        </span>
-        <span className={`${spanStyle}`}>
-          <FaRuler /> {property.area} m²
-        </span>
+        {property.bathrooms != null && property.bathrooms > 0 && (
+          <span className={`${spanStyle}`}>
+            <MdBathroom /> {property.bathrooms} salle
+            {property.bathrooms > 1 ? "s" : ""} de bain
+          </span>
+        )}
+        {property.area != null && (
+          <span className={`${spanStyle}`}>
+            <FaRuler /> {property.area} m²
+          </span>
+        )}
       </div>
       <p className="mt-6 text-2xl font-semibold text-primary">
         {property.price}
@@ -118,7 +123,13 @@ const PropertyDetailPage = () => {
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
           {similarListings.map((listing) => {
-            return <PropertyCard key={listing.id} {...listing} />;
+            return (
+              <PropertyCard
+                key={listing.id}
+                {...listing}
+                area={listing.area ?? undefined}
+              />
+            );
           })}
         </div>
       )}

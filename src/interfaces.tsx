@@ -13,17 +13,13 @@ export interface PropertyCardProps {
   images: string[];
   description: string;
   longDescription: string;
-
   // These are optional — only present on apartments/houses
   floor?: number;
   parking?: boolean;
-
-  // Area can be number or null (e.g. price per m² only)
-  // These are optional — only apartments have them
+  // Area is optional (not all properties have it)
   bedrooms?: number;
   bathrooms?: number;
-  area?: number | null; // can be missing or null
-
+  area?: number; // optional, no null allowed
   type: string;
   status?: string;
   features?: string[];

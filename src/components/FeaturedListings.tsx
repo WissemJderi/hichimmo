@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PropertyCard from "./items/PropertyCard";
 import properties from "../properties.json";
 import { useMemo } from "react";
+
 const FeaturedListings = () => {
   const featuredProperties = useMemo(() => properties.slice(0, 3), []);
 
@@ -33,7 +34,6 @@ const FeaturedListings = () => {
         >
           Découvrez nos meilleures opportunités immobilières.
         </motion.p>
-
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -51,27 +51,11 @@ const FeaturedListings = () => {
           {featuredProperties.map((property) => (
             <PropertyCard
               key={property.id}
-              id={property.id}
-              ref={property.ref}
-              title={property.title}
-              location={property.location}
-              price={property.price}
-              images={property.images}
-              description={property.description}
-              longDescription={property.longDescription}
-              bedrooms={property.bedrooms}
-              bathrooms={property.bathrooms}
+              {...property}
               area={property.area ?? undefined}
-              type={property.type}
-              status={property.status}
-              features={property.features}
-              isFeatured={property.isFeatured}
-              floor={property.floor}
-              parking={property.parking}
             />
           ))}
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
