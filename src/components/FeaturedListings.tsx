@@ -49,7 +49,21 @@ const FeaturedListings = () => {
           className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato"
         >
           {featuredProperties.map((property) => (
-            <PropertyCard key={property.id} {...property} />
+            <PropertyCard
+              key={property.id}
+              ref={property.ref}
+              longDescription={property.longDescription}
+              type={property.type}
+              id={property.id}
+              title={property.title}
+              location={property.location}
+              price={property.price}
+              images={property.images}
+              description={property.description}
+              bedrooms={property.bedrooms}
+              bathrooms={property.bathrooms}
+              area={property.area ?? null} // handle undefined or null
+            />
           ))}
         </motion.div>
 
