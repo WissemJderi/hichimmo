@@ -17,7 +17,7 @@ export interface propertyCardProps {
   bathrooms?: number;
   floor?: number;
   parking?: boolean;
-  area: number;
+  area: any;
   type: string;
   status?: string;
   features?: string[];
