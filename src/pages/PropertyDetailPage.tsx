@@ -83,8 +83,9 @@ const PropertyDetailPage = () => {
 
       <div className="mt-6 flex gap-4 text-gray-800 flex-wrap">
         {property.bedrooms != null && property.bedrooms > 0 && (
-          <span className={`${spanStyle}`}>
-            <MdBedroomParent /> {property.bedrooms} chambres
+          <span>
+            <MdBedroomParent /> {property.bedrooms} chambre
+            {property.bedrooms > 1 ? "s" : ""}
           </span>
         )}
         <span className={`${spanStyle}`}>

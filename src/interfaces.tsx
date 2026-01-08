@@ -4,7 +4,7 @@ export interface sideBarListItemProps {
   onClick: () => void;
 }
 
-export interface propertyCardProps {
+export interface PropertyCardProps {
   id: number;
   ref: string;
   title: string;
@@ -13,11 +13,16 @@ export interface propertyCardProps {
   images: string[];
   description: string;
   longDescription: string;
-  bedrooms?: any;
+
+  // These are optional — only present on apartments/houses
+  bedrooms?: number;
   bathrooms?: number;
   floor?: number;
   parking?: boolean;
-  area: any;
+
+  // Area can be number or null (e.g. price per m² only)
+  area?: number | null;
+
   type: string;
   status?: string;
   features?: string[];
