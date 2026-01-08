@@ -51,18 +51,23 @@ const FeaturedListings = () => {
           {featuredProperties.map((property) => (
             <PropertyCard
               key={property.id}
-              ref={property.ref}
-              longDescription={property.longDescription}
-              type={property.type}
               id={property.id}
+              ref={property.ref}
               title={property.title}
               location={property.location}
               price={property.price}
               images={property.images}
               description={property.description}
+              longDescription={property.longDescription}
               bedrooms={property.bedrooms}
               bathrooms={property.bathrooms}
-              area={property.area ?? null} // handle undefined or null
+              area={property.area ?? undefined}
+              type={property.type}
+              status={property.status}
+              features={property.features}
+              isFeatured={property.isFeatured}
+              floor={property.floor}
+              parking={property.parking}
             />
           ))}
         </motion.div>
