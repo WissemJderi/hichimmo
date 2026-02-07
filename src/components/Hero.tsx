@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { phoneNumber } from "../utils";
-import { locations, properties } from "../data";
+import { formatTitle, phoneNumber, titleCase } from "../utils";
+import { Location, PropertyType } from "../types/Property";
 const Hero = () => {
+  const locations = Object.values(Location);
+  const properties = Object.values(PropertyType);
+
   const [propertyType, setPropertyType] = useState({
+    location: "none",
     type: properties[0],
-    location: locations[0],
   });
+
   const handleChange =
     (field: "type" | "location") => (e: React.ChangeEvent<HTMLSelectElement>) =>
       setPropertyType((prev) => ({ ...prev, [field]: e.target.value }));
@@ -86,10 +90,11 @@ const Hero = () => {
                 onChange={handleChange("location")}
                 className="cursor-pointer rounded-md border-0 bg-white/90 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 backdrop-blur focus:ring-2 focus:ring-white/60"
               >
+                <option value="none">Voir tout</option>;
                 {locations.map((location) => {
                   return (
                     <option key={location} value={location}>
-                      {location}
+                      {formatTitle(location)}
                     </option>
                   );
                 })}
@@ -106,7 +111,7 @@ const Hero = () => {
                 {properties.map((property) => {
                   return (
                     <option key={property} value={property}>
-                      {property}
+                      {titleCase(property)}
                     </option>
                   );
                 })}

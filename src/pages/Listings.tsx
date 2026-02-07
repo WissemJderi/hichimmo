@@ -1,30 +1,52 @@
-import { useSearchParams } from "react-router";
 import PropertyCard from "../components/items/PropertyCard";
-import properties from "../properties.json";
-import { useMemo } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Location, Property, PropertyType } from "../types/Property";
+import propertiesService from "../services/propertiesService";
+import { useSearchParams } from "react-router";
 
 const Listings = () => {
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type");
   const location = searchParams.get("location");
 
-  const filteredListings = useMemo(() => {
-    return properties.filter((property) => {
-      const propertyType = property.type?.toLowerCase();
-      const propertyLocation = property.location?.toLowerCase();
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-      const typeFilter =
-        !type || type === "all" || propertyType === type.toLowerCase();
+  useEffect(() => {
+    const getProperties = async () => {
+      try {
+        if (location && type) {
+          const fetchedProperties = await propertiesService.searchProperties(
+            (location as Location) || "none",
+            type as PropertyType,
+          );
 
-      const locationFilter =
-        !location ||
-        location === "Voir tout" ||
-        propertyLocation === location.toLowerCase();
+          setProperties(
+            Array.isArray(fetchedProperties)
+              ? fetchedProperties
+              : fetchedProperties
+                ? [fetchedProperties]
+                : [],
+          );
+        } else {
+          const fetchedProperties = await propertiesService.getAll();
+          setProperties(fetchedProperties);
+        }
+      } catch (error) {
+        console.error("Failed to fetch properties:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProperties();
+  }, [location, type]);
 
-      return typeFilter && locationFilter;
-    });
-  }, [type, location]);
+  if (loading)
+    return <p className="text-center text-lg">Chargement des propriétés...</p>;
+
+  if (properties.length === 0)
+    return <p className="text-center text-lg">Aucune propriété trouvée.</p>;
 
   return (
     <motion.div
@@ -42,24 +64,13 @@ const Listings = () => {
       </motion.h2>
 
       <motion.div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
-        {filteredListings.length > 0 ? (
-          filteredListings.map((property) => (
-            <PropertyCard
-              key={`${property.title} ${property.id}`}
-              {...property}
-              area={property.area ?? undefined}
-            />
-          ))
-        ) : (
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center text-gray-600 mt-6"
-          >
-            Aucun bien ne correspond à votre recherche.
-          </motion.p>
-        )}
+        {properties.map((property) => (
+          <PropertyCard
+            key={`${property.title} ${property._id}`}
+            {...property}
+            area={property.area ?? undefined}
+          />
+        ))}
       </motion.div>
     </motion.div>
   );

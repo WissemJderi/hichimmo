@@ -7,6 +7,9 @@ import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import ScrollToTopButton from "./components/items/ScrollToTopButton.tsx";
+import LoginPage from "./pages/admin/LoginPage.tsx";
+import Dashboard from "./pages/admin/Dashboard.tsx";
+import AddPropertyForm from "./pages/admin/AddPropertyForm.tsx";
 
 const Listings = React.lazy(() => import("./pages/Listings"));
 const PropertyDetailPage = React.lazy(
@@ -23,6 +26,9 @@ function Layout() {
           <Route path="/" element={<App />} />
           <Route path="/listings" element={<Listings />} />
           <Route path="/listings/:id" element={<PropertyDetailPage />} />
+          <Route path="/admin/login" element={<LoginPage />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/new-property" element={<AddPropertyForm />} />
         </Routes>
       </main>
 

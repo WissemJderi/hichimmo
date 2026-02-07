@@ -1,11 +1,32 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import PropertyCard from "./items/PropertyCard";
-import properties from "../properties.json";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import propertiesService from "../services/propertiesService";
+import { Property } from "../types/Property";
 
 const FeaturedListings = () => {
-  const featuredProperties = useMemo(() => properties.slice(0, 3), []);
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    const getProperties = async () => {
+      try {
+        const fetchedProperties = await propertiesService.getAll();
+        setProperties(fetchedProperties);
+      } catch (error) {
+        console.error("Failed to fetch properties:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProperties();
+  }, []);
+
+  if (loading)
+    return <p className="text-center text-lg">Chargement des propriétés...</p>;
+  if (properties.length === 0)
+    return <p className="text-center text-lg">Aucune propriété trouvée.</p>;
+  const featuredProperties = properties.slice(0, 3);
 
   return (
     <motion.section
@@ -50,7 +71,7 @@ const FeaturedListings = () => {
         >
           {featuredProperties.map((property) => (
             <PropertyCard
-              key={property.id}
+              key={property._id}
               {...property}
               area={property.area ?? undefined}
             />
