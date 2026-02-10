@@ -5,6 +5,7 @@ import authService from "../../services/authService";
 import PropertiesTable from "./components/PropertiesTable";
 import propertiesService from "../../services/propertiesService";
 import {IoLogOut} from "react-icons/io5"
+import axios from "axios";
 
 const Dashboard = () => {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -26,14 +27,16 @@ const Dashboard = () => {
         const parsedToken = JSON.parse(token);
         const fetchedProperties = await authService.getAll(parsedToken);
         setProperties(fetchedProperties);
-      } catch (error: unknown) {
-        if (error.response?.status === 401) {
-          localStorage.removeItem("webtoken");
-          setIsAuthenticated(false);
-        }
-        console.error("Failed to fetch properties:", error);
-        setIsAuthenticated(false);
-      } finally {
+      } catch (error) {
+  if (axios.isAxiosError(error) && error.response?.status === 401) {
+    localStorage.removeItem("webtoken");
+    setIsAuthenticated(false);
+  }
+  console.error("Failed to fetch properties:", error);
+  setIsAuthenticated(false);
+}
+
+      finally {
         setLoading(false);
       }
     };

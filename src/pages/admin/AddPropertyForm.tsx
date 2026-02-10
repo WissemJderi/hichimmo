@@ -6,10 +6,9 @@ import { useNavigate } from "react-router";
 
 interface PropertyFormProps {
   property?: Property;
-  onCancel: () => void;
 }
 
-const PropertyForm = ({ property, onCancel }: PropertyFormProps) => {
+const PropertyForm = ({ property}: PropertyFormProps) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: property?.title || "",
@@ -451,20 +450,13 @@ const PropertyForm = ({ property, onCancel }: PropertyFormProps) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium transition-colors"
+          className="flex-1 cursor-pointer bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-hover disabled:bg-gray-400 disabled:cursor-not-allowed font-medium transition-colors"
         >
           {isSubmitting
             ? "Enregistrement..."
             : property
               ? "Modifier"
               : "Ajouter"}
-        </button>
-        <button
-          type="button"
-          onClick={onCancel}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 font-medium transition-colors"
-        >
-          Annuler
         </button>
       </div>
     </form>

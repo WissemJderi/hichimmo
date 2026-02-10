@@ -10,13 +10,14 @@ import ScrollToTopButton from "./components/items/ScrollToTopButton.tsx";
 import LoginPage from "./pages/admin/LoginPage.tsx";
 import Dashboard from "./pages/admin/Dashboard.tsx";
 import AddPropertyForm from "./pages/admin/AddPropertyForm.tsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
 const Listings = React.lazy(() => import("./pages/Listings"));
 const PropertyDetailPage = React.lazy(
   () => import("./pages/PropertyDetailPage"),
 );
 
-function Layout() {
+export function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -27,8 +28,22 @@ function Layout() {
           <Route path="/listings" element={<Listings />} />
           <Route path="/listings/:id" element={<PropertyDetailPage />} />
           <Route path="/admin/login" element={<LoginPage />} />
-          <Route path="/admin/dashboard" element={<Dashboard />} />
-          <Route path="/admin/new-property" element={<AddPropertyForm />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/new-property"
+            element={
+              <ProtectedRoute>
+                <AddPropertyForm />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
 
