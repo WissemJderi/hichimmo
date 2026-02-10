@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Property, PropertyType, Location } from "../../types/Property";
 import { formatTitle, titleCase } from "../../utils";
+import propertiesService from "../../services/propertiesService";
+import { useNavigate } from "react-router";
 
 interface PropertyFormProps {
   property?: Property;
-  onSubmit: (formData: FormData) => Promise<void>;
   onCancel: () => void;
 }
 
-const PropertyForm = ({ property, onSubmit, onCancel }: PropertyFormProps) => {
+const PropertyForm = ({ property, onCancel }: PropertyFormProps) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: property?.title || "",
     ref: property?.ref || "",
     description: property?.description || "",
     price: property?.price || 0,
-    propertyType: property?.propertyType || ("appartment" as PropertyType),
+    propertyType: property?.propertyType || ("appartement" as PropertyType),
     location: property?.location || ("akouda" as Location),
     area: property?.area || 0,
     status: property?.status || ("sale" as "sale" | "rent"),
@@ -113,28 +115,30 @@ const PropertyForm = ({ property, onSubmit, onCancel }: PropertyFormProps) => {
 
     try {
       const data = new FormData();
+      data.append("title", formData.title);
+      data.append("ref", formData.ref);
+      data.append("description", formData.description);
+      data.append("price", String(formData.price));
+      data.append("propertyType", formData.propertyType);
+      data.append("location", formData.location);
+      data.append("area", String(formData.area));
+      data.append("status", formData.status);
 
-      // Append all form fields
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value !== undefined && value !== null) {
-          data.append(key, String(value));
-        }
-      });
+      if (formData.bedrooms) data.append("bedrooms", String(formData.bedrooms));
+      if (formData.bathrooms)
+        data.append("bathrooms", String(formData.bathrooms));
+      if (formData.floor) data.append("floor", String(formData.floor));
+      data.append("parking", String(formData.parking));
 
-      // Append new images
       images.forEach((image) => {
         data.append("images", image);
       });
 
-      // If editing, send existing image URLs
-      if (property?.images) {
-        const existingImages = imagePreviews.filter((url) =>
-          property.images.includes(url),
-        );
-        data.append("existingImages", JSON.stringify(existingImages));
-      }
+      console.log(data);
 
-      await onSubmit(data);
+      await propertiesService.addProperty(data);
+
+      navigate("/admin/dashboard");
     } catch (error) {
       console.error("Erreur lors de la soumission:", error);
     } finally {
@@ -152,6 +156,7 @@ const PropertyForm = ({ property, onSubmit, onCancel }: PropertyFormProps) => {
     <form
       onSubmit={handleSubmit}
       className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto"
+      encType="multipart/form-data"
     >
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         {property ? "Modifier la propriété" : "Ajouter une propriété"}

@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router";
 import { Property } from "../../types/Property";
 import authService from "../../services/authService";
 import PropertiesTable from "./components/PropertiesTable";
+import propertiesService from "../../services/propertiesService";
 
 const Dashboard = () => {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -37,6 +38,20 @@ const Dashboard = () => {
     getProperties();
   }, []);
 
+  const handleDelete = async (id: string, title: string) => {
+    if (!window.confirm(`Êtes-vous sûr de vouloir supprimer « ${title} » ?`)) {
+      return;
+    }
+
+    try {
+      await propertiesService.removeProperty(id);
+      setProperties((prev) => prev.filter((p) => p._id !== id));
+    } catch (error) {
+      console.error("Delete failed", error);
+      alert("Échec de la suppression");
+    }
+  };
+
   if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace />;
   }
@@ -52,7 +67,7 @@ const Dashboard = () => {
         <Link to="/admin/new-property">Ajouter une Propriété</Link>
       </button>
 
-      <PropertiesTable properties={properties} />
+      <PropertiesTable properties={properties} onDelete={handleDelete} />
     </div>
   );
 };

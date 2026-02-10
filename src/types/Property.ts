@@ -27,7 +27,7 @@ export enum Location {
 }
 
 export interface Property {
-  _id: string;
+  _id?: string;
   title: string;
   ref: string;
   description: string;
@@ -42,5 +42,5 @@ export interface Property {
   parking?: boolean;
   bedrooms?: number;
   bathrooms?: number;
-  createdAt: string;
+  createdAt?: string;
 }

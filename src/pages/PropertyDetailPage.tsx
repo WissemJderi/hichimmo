@@ -1,15 +1,21 @@
 import { useParams } from "react-router";
 
 // Icons
-import { FaMapMarkerAlt, FaRuler } from "react-icons/fa";
+import { FaBuilding, FaMapMarkerAlt, FaParking, FaRuler } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Breadcrumb from "../components/items/Breadcrumb";
 import EmblaCarousel from "../components/items/Embla/EmblaCarousel";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Property } from "../types/Property";
-import { createWhatsappUrl, formatPrice, formatTitle } from "../utils";
+import {
+  createWhatsappUrl,
+  formatFloor,
+  formatPrice,
+  formatTitle,
+} from "../utils";
 import propertiesService from "../services/propertiesService";
+import { MdBathroom, MdBedroomParent } from "react-icons/md";
 
 const PropertyDetailPage = () => {
   const [property, setProperty] = useState<Property>({} as Property);
@@ -104,18 +110,31 @@ const PropertyDetailPage = () => {
       )}
 
       <div className="mt-6 flex gap-4 text-gray-800 flex-wrap">
-        {/* {property.bedrooms != null && property.bedrooms > 0 && ( */}
-        {/*   <span className={`${spanStyle}`}> */}
-        {/*     <MdBedroomParent /> {property.bedrooms} chambre */}
-        {/*     {property.bedrooms > 1 ? "s" : ""} */}
-        {/*   </span> */}
-        {/* )} */}
-        {/* {property.bathrooms != null && property.bathrooms > 0 && ( */}
-        {/*   <span className={`${spanStyle}`}> */}
-        {/*     <MdBathroom /> {property.bathrooms} salle */}
-        {/*     {property.bathrooms > 1 ? "s" : ""} de bain */}
-        {/*   </span> */}
-        {/* )} */}
+        {property.bedrooms != null && property.bedrooms > 0 && (
+          <span className={`${spanStyle}`}>
+            <MdBedroomParent /> {property.bedrooms} chambre
+            {property.bedrooms > 1 ? "s" : ""}
+          </span>
+        )}
+        {property.bathrooms != null && property.bathrooms > 0 && (
+          <span className={`${spanStyle}`}>
+            <MdBathroom /> {property.bathrooms} salle
+            {property.bathrooms > 1 ? "s" : ""} de bain
+          </span>
+        )}
+        {property.floor != null && (
+          <span className={`${spanStyle}`}>
+            <FaBuilding className="text-lg" />
+            {formatFloor(property.floor)}
+          </span>
+        )}
+        {property.parking ? (
+          <span>
+            <FaParking />
+            Parking
+          </span>
+        ) : null}
+
         {property.area != null && (
           <span className={`${spanStyle}`}>
             <FaRuler /> {property.area} m²

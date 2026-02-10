@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { FaParking } from "react-icons/fa";
+import { MdBathroom, MdBedroomParent } from "react-icons/md";
+import { FaBuilding } from "react-icons/fa6";
 import { Link } from "react-router";
 import { FaRuler } from "react-icons/fa";
 import EmblaCarousel from "./Embla/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import React from "react";
-import { formatPrice, formatTitle } from "../../utils";
+import { formatFloor, formatPrice, formatTitle } from "../../utils";
 import { Property } from "../../types/Property";
 
 const OPTIONS: EmblaOptionsType = { dragFree: false };
@@ -16,6 +19,10 @@ const PropertyCard = ({
   price,
   images,
   area,
+  bedrooms,
+  bathrooms,
+  floor,
+  parking,
 }: Property) => {
   return (
     <motion.div
@@ -36,18 +43,30 @@ const PropertyCard = ({
         </p>
         {/* Features row - only show items that exist */}
         <div className="mt-4 flex flex-wrap gap-6 text-sm text-gray-700">
-          {/* {bedrooms != null && bedrooms > 0 && ( */}
-          {/*   <span className="flex items-center gap-2"> */}
-          {/*     <MdBedroomParent className="text-lg" /> */}
-          {/*     {bedrooms} Ch. */}
-          {/*   </span> */}
-          {/* )} */}
-          {/* {bathrooms != null && bathrooms > 0 && ( */}
-          {/*   <span className="flex items-center gap-2"> */}
-          {/*     <MdBathroom className="text-lg" /> */}
-          {/*     {bathrooms} SDB */}
-          {/*   </span> */}
-          {/* )} */}
+          {bedrooms != null && bedrooms > 0 && (
+            <span className="flex items-center gap-2">
+              <MdBedroomParent className="text-lg" />
+              {bedrooms} Ch.
+            </span>
+          )}
+          {bathrooms != null && bathrooms > 0 && (
+            <span className="flex items-center gap-2">
+              <MdBathroom className="text-lg" />
+              {bathrooms} SDB
+            </span>
+          )}
+          {floor != null && (
+            <span className="flex items-center gap-2">
+              <FaBuilding className="text-lg" />
+              {formatFloor(floor)}
+            </span>
+          )}
+          {parking ? (
+            <span>
+              <FaParking />
+              Parking
+            </span>
+          ) : null}
           {area != null && (
             <span className="flex items-center gap-2">
               <FaRuler className="text-lg" />

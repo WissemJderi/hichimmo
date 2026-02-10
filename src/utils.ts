@@ -48,3 +48,9 @@ export const formatDateObject = (date: string) => {
 
   return `${numberOfDay} ${month} ${year}`;
 };
+
+export const formatFloor = (floorNum: number): string => {
+  if (floorNum === 0) return "Rez-de-chaussée";
+  if (floorNum === 1) return "1er étage";
+  return `${floorNum}e étage`;
+};

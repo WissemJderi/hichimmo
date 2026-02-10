@@ -1,17 +1,15 @@
+import { Link } from "react-router";
 import { Property } from "../../../types/Property";
 import { formatDateObject, formatPrice, formatTitle } from "../../../utils";
 
 interface PropertiesTableProps {
   properties: Property[];
-  onEdit: (property: Property) => void;
-  onDelete: (propertyId: string) => void;
+  onDelete: (id: string, title: string) => void;
 }
 
-const PropertiesTable = ({
-  properties,
-  onEdit,
-  onDelete,
-}: PropertiesTableProps) => {
+const PropertiesTable = ({ properties, onDelete }: PropertiesTableProps) => {
+  console.log(properties);
+
   return (
     <>
       {/* Mobile: Card Layout */}
@@ -29,7 +27,7 @@ const PropertiesTable = ({
               />
               <div className="flex-1 min-w-0">
                 <h3 className="text-sm font-semibold text-gray-900 truncate">
-                  {property.title}
+                  <Link to={`/listings/${property._id}`}>{property.title}</Link>
                 </h3>
                 <p className="text-sm text-gray-600 mt-1">
                   {formatTitle(property.location)}
@@ -52,20 +50,14 @@ const PropertiesTable = ({
                   {property.status === "sale" ? "Vente" : "Location"}
                 </span>
                 <span className="text-xs text-gray-500">
-                  {formatDateObject(property.createdAt)}
+                  {formatDateObject(property.createdAt!)}
                 </span>
               </div>
 
               <div className="flex gap-2">
                 <button
-                  onClick={() => onEdit(property)}
-                  className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
-                >
-                  Modifier
-                </button>
-                <button
-                  onClick={() => onDelete(property._id)}
-                  className="text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
+                  onClick={() => onDelete(property._id!, property.title)}
+                  className="cursor-pointer text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
                 >
                   Supprimer
                 </button>
@@ -118,7 +110,9 @@ const PropertiesTable = ({
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm font-medium text-gray-900">
-                    {property.title}
+                    <Link to={`/listings/${property._id}`}>
+                      {property.title}
+                    </Link>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -143,19 +137,13 @@ const PropertiesTable = ({
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {formatDateObject(property.createdAt)}
+                  {formatDateObject(property.createdAt!)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">
                   <div className="flex gap-2">
                     <button
-                      onClick={() => onEdit(property)}
-                      className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
-                    >
-                      Modifier
-                    </button>
-                    <button
-                      onClick={() => onDelete(property._id)}
-                      className="text-red-600 hover:text-red-800 font-medium transition-colors"
+                      onClick={() => onDelete(property._id!, property.title)}
+                      className="cursor-pointer text-red-600 hover:text-red-800 font-medium transition-colors"
                     >
                       Supprimer
                     </button>

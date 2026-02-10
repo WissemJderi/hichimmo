@@ -23,4 +23,40 @@ const searchProperties = async (
   return properties.data;
 };
 
-export default { getAll, getPropertyById, searchProperties };
+const addProperty = async (data: FormData) => {
+  const token = localStorage.getItem("webtoken");
+  if (!token) {
+    throw new Error("Token is invalid");
+  }
+
+  const parsedToken = JSON.parse(token);
+
+  const property = await axios.post(baseUrl, data, {
+    headers: { Authorization: `Bearer ${parsedToken}` },
+  });
+
+  return property.data;
+};
+
+const removeProperty = async (id: string) => {
+  const token = localStorage.getItem("webtoken");
+  if (!token) {
+    throw new Error("Token is invalid");
+  }
+
+  const parsedToken = JSON.parse(token);
+
+  const property = await axios.delete(`${baseUrl}/${id}`, {
+    headers: { Authorization: `Bearer ${parsedToken}` },
+  });
+
+  return property.data;
+};
+
+export default {
+  getAll,
+  getPropertyById,
+  searchProperties,
+  addProperty,
+  removeProperty,
+};
