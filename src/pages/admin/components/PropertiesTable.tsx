@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Property } from "../../../types/Property";
 import { formatDateObject, formatPrice, formatTitle } from "../../../utils";
+import { MdDelete } from "react-icons/md";
 
 interface PropertiesTableProps {
   properties: Property[];
@@ -57,9 +58,9 @@ const PropertiesTable = ({ properties, onDelete }: PropertiesTableProps) => {
               <div className="flex gap-2">
                 <button
                   onClick={() => onDelete(property._id!, property.title)}
-                  className="cursor-pointer text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
+                  className="cursor-pointer flex items-center gap-2  text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
                 >
-                  Supprimer
+                   <MdDelete size={20}/>
                 </button>
               </div>
             </div>
@@ -143,9 +144,9 @@ const PropertiesTable = ({ properties, onDelete }: PropertiesTableProps) => {
                   <div className="flex gap-2">
                     <button
                       onClick={() => onDelete(property._id!, property.title)}
-                      className="cursor-pointer text-red-600 hover:text-red-800 font-medium transition-colors"
+                      className="cursor-pointer text-red-600 hover:text-red-800 font-medium transition-colors flex items-center gap-2 "
                     >
-                      Supprimer
+                       <MdDelete size={20} />
                     </button>
                   </div>
                 </td>

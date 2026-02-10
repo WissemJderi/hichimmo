@@ -2,8 +2,6 @@ import { useState } from "react";
 import authService from "../../services/authService";
 import { useNavigate } from "react-router";
 
-//TODO: Sepecrate the errorMessage into a seperate component
-
 const LoginPage = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");

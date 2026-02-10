@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { Property } from "../../types/Property";
 import authService from "../../services/authService";
 import PropertiesTable from "./components/PropertiesTable";
 import propertiesService from "../../services/propertiesService";
+import {IoLogOut} from "react-icons/io5"
 
 const Dashboard = () => {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("webtoken");
@@ -24,7 +26,7 @@ const Dashboard = () => {
         const parsedToken = JSON.parse(token);
         const fetchedProperties = await authService.getAll(parsedToken);
         setProperties(fetchedProperties);
-      } catch (error: any) {
+      } catch (error: unknown) {
         if (error.response?.status === 401) {
           localStorage.removeItem("webtoken");
           setIsAuthenticated(false);
@@ -58,10 +60,19 @@ const Dashboard = () => {
 
   if (loading) return <p>please wait...</p>;
 
+  const handleLogout = () => {
+    localStorage.removeItem("webtoken");
+    navigate("/admin/login");
+  };
+
   return (
     <div>
-      <button className="text-2xl text-center my-12">Logout</button>
-
+      <button
+        onClick={handleLogout}
+        className="rounded-md  flex items-center gap-2 bg-red-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-red-700 transition cursor-pointer my-5 mx-2"
+      >
+        Déconnexion <IoLogOut size={20}/>
+      </button>
       <h1 className="text-4xl text-center my-12">Tableau des Propriétés</h1>
       <button className="rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-white hover:bg-primary-hover transition cursor-pointer my-5 mx-2">
         <Link to="/admin/new-property">Ajouter une Propriété</Link>
