@@ -2,14 +2,16 @@ import { useState } from "react";
 import { Property, PropertyType, Location } from "../../types/Property";
 import { formatTitle, titleCase } from "../../utils";
 import propertiesService from "../../services/propertiesService";
-import { useNavigate } from "react-router";
 
 interface PropertyFormProps {
   property?: Property;
+  onCancel: () => void;
+  onSuccess?: () => void; // Callback after successful save
 }
 
-const PropertyForm = ({ property}: PropertyFormProps) => {
-  const navigate = useNavigate();
+const PropertyForm = ({ property, onCancel, onSuccess }: PropertyFormProps) => {
+  const isEditMode = !!property;
+
   const [formData, setFormData] = useState({
     title: property?.title || "",
     ref: property?.ref || "",
@@ -29,6 +31,9 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
   const [imagePreviews, setImagePreviews] = useState<string[]>(
     property?.images || [],
   );
+  const [existingImages, setExistingImages] = useState<string[]>(
+    property?.images || [],
+  );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [imageError, setImageError] = useState("");
 
@@ -36,6 +41,7 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
 
   const locations = Object.values(Location);
   const propertyTypes = Object.values(PropertyType);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -61,20 +67,13 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
     const files = Array.from(e.target.files || []);
     setImageError("");
 
-    // Check if total images exceed limit
-    if (files.length > MAX_IMAGES) {
-      setImageError(
-        `Vous ne pouvez télécharger que ${MAX_IMAGES} images maximum.`,
-      );
-      e.target.value = ""; // Reset input
-      return;
-    }
+    const totalImages = existingImages.length + images.length + files.length;
 
-    if (imagePreviews.length + files.length > MAX_IMAGES) {
+    if (totalImages > MAX_IMAGES) {
       setImageError(
         `Vous ne pouvez avoir que ${MAX_IMAGES} images maximum au total.`,
       );
-      e.target.value = "";
+      e.target.value = ""; // Reset input
       return;
     }
 
@@ -88,14 +87,17 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
   };
 
   const removeImage = (index: number) => {
-    // Remove from previews
-    setImagePreviews((prev) => prev.filter((_, i) => i !== index));
+    const isExistingImage = index < existingImages.length;
 
-    // Remove from files (if it's a newly added file)
-    const existingImagesCount = property?.images?.length || 0;
-    if (index >= existingImagesCount) {
-      const fileIndex = index - existingImagesCount;
-      setImages((prev) => prev.filter((_, i) => i !== fileIndex));
+    if (isExistingImage) {
+      // Remove from existing images
+      setExistingImages((prev) => prev.filter((_, i) => i !== index));
+      setImagePreviews((prev) => prev.filter((_, i) => i !== index));
+    } else {
+      // Remove from new images
+      const newImageIndex = index - existingImages.length;
+      setImages((prev) => prev.filter((_, i) => i !== newImageIndex));
+      setImagePreviews((prev) => prev.filter((_, i) => i !== index));
     }
 
     setImageError("");
@@ -104,8 +106,8 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate images
-    if (imagePreviews.length === 0) {
+    const totalImages = existingImages.length + images.length;
+    if (totalImages === 0) {
       setImageError("Veuillez ajouter au moins une image.");
       return;
     }
@@ -129,17 +131,29 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
       if (formData.floor) data.append("floor", String(formData.floor));
       data.append("parking", String(formData.parking));
 
+      if (isEditMode) {
+        data.append("existingImages", JSON.stringify(existingImages));
+      }
+
       images.forEach((image) => {
         data.append("images", image);
       });
 
-      console.log(data);
+      if (isEditMode && property) {
+        await propertiesService.updateProperty(property._id!, data);
+        alert("Propriété modifiée avec succès!");
+      } else {
+        await propertiesService.addProperty(data);
+        alert("Propriété ajoutée avec succès!");
+      }
 
-      await propertiesService.addProperty(data);
-
-      navigate("/admin/dashboard");
-    } catch (error) {
+      onSuccess?.(); // Call success callback
+      onCancel(); // Close form
+    } catch (error: any) {
       console.error("Erreur lors de la soumission:", error);
+      const errorMessage =
+        error.response?.data?.error || "Erreur lors de la soumission";
+      alert(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -158,7 +172,7 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
       encType="multipart/form-data"
     >
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        {property ? "Modifier la propriété" : "Ajouter une propriété"}
+        {isEditMode ? "Modifier la propriété" : "Ajouter une propriété"}
       </h2>
 
       <div className="space-y-6">
@@ -384,7 +398,7 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
         {/* Images */}
         <div>
           <label className={labelClass}>
-            Images * ({imagePreviews.length}/{MAX_IMAGES})
+            Images * ({existingImages.length + images.length}/{MAX_IMAGES})
           </label>
 
           {canAddMoreImages && (
@@ -438,6 +452,11 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
                       />
                     </svg>
                   </button>
+                  {index < existingImages.length && (
+                    <span className="absolute bottom-1 left-1 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">
+                      Existante
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -454,7 +473,7 @@ const PropertyForm = ({ property}: PropertyFormProps) => {
         >
           {isSubmitting
             ? "Enregistrement..."
-            : property
+            : isEditMode
               ? "Modifier"
               : "Ajouter"}
         </button>

@@ -24,3 +24,8 @@ todos.js
 *.njsproj
 *.sln
 *.sw?
+# env files
+.env
+.env.*
+!.env.example
+.vercel
