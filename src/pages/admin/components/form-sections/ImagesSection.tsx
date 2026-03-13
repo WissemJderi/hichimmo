@@ -1,4 +1,8 @@
-import { labelClass, inputClass, MAX_IMAGES } from "../../../../../constants/formConstants";
+import {
+  labelClass,
+  inputClass,
+  MAX_IMAGES,
+} from "../../../../constants/formConstants";
 import ImagePreviw from "../ImagePreviw";
 
 interface ImagesSectionProps {
@@ -42,10 +46,7 @@ const ImagesSection = ({
     )}
 
     {imagePreviews.length > 0 && (
-      <ImagePreviw
-        imagePreviews={imagePreviews}
-        removeImage={removeImage}
-      />
+      <ImagePreviw imagePreviews={imagePreviews} removeImage={removeImage} />
     )}
   </div>
 );

@@ -1,4 +1,4 @@
-import { labelClass, inputClass } from "../../../../../constants/formConstants";
+import { labelClass, inputClass } from "../../../../constants/formConstants";
 import { FormDataState } from "../../hooks/usePropertyForm";
 
 interface PriceSectionProps {
