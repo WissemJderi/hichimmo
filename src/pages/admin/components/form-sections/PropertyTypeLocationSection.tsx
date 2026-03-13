@@ -1,6 +1,10 @@
-import { labelClass, inputClass, propertyTypes } from "../../../../../constants/formConstants";
-import { formatTitle, titleCase } from "../../../../../utils";
-import { locations } from "../../../../../data";
+import {
+  labelClass,
+  inputClass,
+  propertyTypes,
+} from "../../../../constants/formConstants";
+import { formatTitle, titleCase } from "../../../../utils";
+import { locations } from "../../../../data";
 import { FormDataState } from "../../hooks/usePropertyForm";
 
 interface PropertyTypeLocationSectionProps {
