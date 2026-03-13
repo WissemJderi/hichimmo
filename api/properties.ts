@@ -35,13 +35,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (location || type) {
     const filter: Record<string, unknown> = {};
     if (location && location !== "none") filter.location = location;
-    if (type && type !== "none") filter.type = type;
+    if (type && type !== "none") filter.propertyType = type; // ← was filter.type
     const queryStart = Date.now();
     const properties = await collection.find(filter).toArray();
     console.log("search query took", Date.now() - queryStart, "ms");
     return res.status(200).json(properties);
   }
-
   // GET all properties
   const queryStart = Date.now();
   const properties = await collection.find({}).toArray();

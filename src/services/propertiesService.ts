@@ -2,6 +2,7 @@ import axios from "axios";
 import { Location, Property, PropertyType } from "../types/Property";
 
 const baseUrl = "/api/properties";
+const adminUrl = "https://dahechimmo-backend.onrender.com/api/properties";
 
 const getAll = async () => {
   const data = await axios.get<Property[]>(baseUrl);
@@ -22,5 +23,40 @@ const searchProperties = async (
   );
   return properties.data;
 };
+const addProperty = async (data: FormData) => {
+  const token = localStorage.getItem("webtoken");
+  if (!token) {
+    throw new Error("Token is invalid");
+  }
 
-export default { getAll, getPropertyById, searchProperties };
+  const parsedToken = JSON.parse(token);
+
+  const property = await axios.post(adminUrl, data, {
+    headers: { Authorization: `Bearer ${parsedToken}` },
+  });
+
+  return property.data;
+};
+
+const removeProperty = async (id: string) => {
+  const token = localStorage.getItem("webtoken");
+  if (!token) {
+    throw new Error("Token is invalid");
+  }
+
+  const parsedToken = JSON.parse(token);
+
+  const property = await axios.delete(`${adminUrl}/${id}`, {
+    headers: { Authorization: `Bearer ${parsedToken}` },
+  });
+
+  return property.data;
+};
+
+export default {
+  getAll,
+  getPropertyById,
+  searchProperties,
+  addProperty,
+  removeProperty,
+};

@@ -61,12 +61,12 @@ const PropertiesTable = ({
               </div>
 
               <div className="flex gap-2">
-                <button
-                  onClick={() => onEdit(property)}
-                  className="cursor-pointer flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
-                >
-                  <MdEdit size={20} />
-                </button>
+                {/* <button */}
+                {/*   onClick={() => onEdit(property)} */}
+                {/*   className="cursor-pointer flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors" */}
+                {/* > */}
+                {/*   <MdEdit size={20} /> */}
+                {/* </button> */}
                 <button
                   onClick={() => onDelete(property._id!, property.title)}
                   className="cursor-pointer flex items-center gap-2  text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
@@ -153,12 +153,12 @@ const PropertiesTable = ({
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">
                   <div className="flex gap-2">
-                    <button
-                      onClick={() => onEdit(property)}
-                      className="cursor-pointer flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
-                    >
-                      <MdEdit size={20} />
-                    </button>
+                    {/* <button */}
+                    {/*   onClick={() => onEdit(property)} */}
+                    {/*   className="cursor-pointer flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors" */}
+                    {/* > */}
+                    {/*   <MdEdit size={20} /> */}
+                    {/* </button> */}
                     <button
                       onClick={() => onDelete(property._id!, property.title)}
                       className="cursor-pointer text-red-600 hover:text-red-800 font-medium transition-colors flex items-center gap-2 "

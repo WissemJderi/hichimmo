@@ -49,10 +49,10 @@ const Dashboard = () => {
     setShowForm(true);
   };
 
-  const handleCloseForm = () => {
-    setEditingProperty(null);
-    setShowForm(false);
-  };
+  // const handleCloseForm = () => {
+  //   setEditingProperty(null);
+  //   setShowForm(false);
+  // };
 
   const handleSuccess = async () => {
     // Refresh the property list
@@ -105,7 +105,7 @@ const Dashboard = () => {
       {showForm ? (
         <PropertyForm
           property={editingProperty || undefined}
-          onCancel={handleCloseForm}
+          //  onCancel={handleCloseForm}
           onSuccess={handleSuccess}
         />
       ) : (

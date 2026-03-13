@@ -5,11 +5,11 @@ import propertiesService from "../../services/propertiesService";
 
 interface PropertyFormProps {
   property?: Property;
-  onCancel: () => void;
+  //  onCancel: () => void;
   onSuccess?: () => void; // Callback after successful save
 }
 
-const PropertyForm = ({ property, onCancel, onSuccess }: PropertyFormProps) => {
+const PropertyForm = ({ property, onSuccess }: PropertyFormProps) => {
   const isEditMode = !!property;
 
   const [formData, setFormData] = useState({
@@ -148,7 +148,7 @@ const PropertyForm = ({ property, onCancel, onSuccess }: PropertyFormProps) => {
       }
 
       onSuccess?.(); // Call success callback
-      onCancel(); // Close form
+      //onCancel(); // Close form
     } catch (error: any) {
       console.error("Erreur lors de la soumission:", error);
       const errorMessage =
