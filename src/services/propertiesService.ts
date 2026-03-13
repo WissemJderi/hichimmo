@@ -53,10 +53,21 @@ const removeProperty = async (id: string) => {
   return property.data;
 };
 
+const updateProperty = async (id: string, data: FormData) => {
+  const token = localStorage.getItem("webtoken");
+  if (!token) throw new Error("Token is invalid");
+  const parsedToken = JSON.parse(token);
+  const property = await axios.put(`${adminUrl}/${id}`, data, {
+    headers: { Authorization: `Bearer ${parsedToken}` },
+  });
+  return property.data;
+};
+
 export default {
   getAll,
   getPropertyById,
   searchProperties,
   addProperty,
   removeProperty,
+  updateProperty,
 };
