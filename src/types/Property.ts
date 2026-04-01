@@ -21,6 +21,7 @@ export enum Location {
   Kantaoui = "kantaoui",
   Khzema = "khzema",
   Sousse = "sousse",
+  Sahloul = "sahloul",
   SidiAbdelhamid = "sidi_abdelhamid",
   SidiBouAli = "sidi_bouali",
   ZaouietSousse = "zaouiet_sousse",
