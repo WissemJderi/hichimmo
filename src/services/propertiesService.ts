@@ -4,6 +4,21 @@ import { API_URL } from "./config";
 
 const baseUrl = `${API_URL}/properties`;
 
+export type PaginatedProperties = { properties: Property[]; total: number };
+
+const getPaginated = async (
+  page = 1,
+  limit = 16,
+): Promise<PaginatedProperties> => {
+  const response = await axios.get<Property[]>(baseUrl, {
+    params: { page, limit },
+  });
+  return {
+    properties: response.data,
+    total: Number(response.headers["x-total-count"]) || response.data.length,
+  };
+};
+
 const getAll = async () => {
   const data = await axios.get<Property[]>(baseUrl);
   return data.data;
@@ -18,14 +33,30 @@ const searchProperties = async (
   location?: Location | "none",
   type?: PropertyType | "none",
 ) => {
-  const params: Record<string, string> = {};
+  const properties = await searchPaginated(location, type);
+  return properties.properties;
+};
+
+const searchPaginated = async (
+  location?: Location | "none",
+  type?: PropertyType | "none",
+  page = 1,
+  limit = 16,
+): Promise<PaginatedProperties> => {
+  const params: Record<string, string | number> = {
+    page,
+    limit,
+  };
   if (location && location !== "none") params.location = location;
   if (type && type !== "none") params.type = type;
 
   const properties = await axios.get<Property[]>(`${baseUrl}/search`, {
     params,
   });
-  return properties.data;
+  return {
+    properties: properties.data,
+    total: Number(properties.headers["x-total-count"]) || properties.data.length,
+  };
 };
 
 const addProperty = async (data: FormData) => {
@@ -69,9 +100,11 @@ const updateProperty = async (id: string, data: FormData) => {
 };
 
 export default {
+  getPaginated,
   getAll,
   getPropertyById,
   searchProperties,
+  searchPaginated,
   addProperty,
   removeProperty,
   updateProperty,

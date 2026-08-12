@@ -50,31 +50,52 @@ describe("propertiesService reads", () => {
   });
 
   it("searchProperties calls GET /api/properties/search with filters", async () => {
-    axiosMock.get.mockResolvedValue({ data: [mockProperty] });
+    axiosMock.get.mockResolvedValue({
+      data: [mockProperty],
+      headers: { "x-total-count": "1" },
+    });
     const result = await propertiesService.searchProperties(
       Location.Sousse,
       PropertyType.Appartement,
     );
     expect(axiosMock.get).toHaveBeenCalledWith(`${BASE_URL}/search`, {
-      params: { location: "sousse", type: "appartement" },
+      params: { location: "sousse", type: "appartement", page: 1, limit: 16 },
     });
     expect(result).toEqual([mockProperty]);
   });
 
   it("searchProperties omits \"none\" params", async () => {
-    axiosMock.get.mockResolvedValue({ data: [mockProperty] });
+    axiosMock.get.mockResolvedValue({
+      data: [mockProperty],
+      headers: { "x-total-count": "1" },
+    });
     await propertiesService.searchProperties("none", PropertyType.Villa);
     expect(axiosMock.get).toHaveBeenCalledWith(`${BASE_URL}/search`, {
-      params: { type: "villa" },
+      params: { type: "villa", page: 1, limit: 16 },
     });
   });
 
-  it("searchProperties with no filters sends empty params", async () => {
-    axiosMock.get.mockResolvedValue({ data: [mockProperty] });
+  it("searchProperties with no filters sends only pagination params", async () => {
+    axiosMock.get.mockResolvedValue({
+      data: [mockProperty],
+      headers: { "x-total-count": "1" },
+    });
     await propertiesService.searchProperties();
     expect(axiosMock.get).toHaveBeenCalledWith(`${BASE_URL}/search`, {
-      params: {},
+      params: { page: 1, limit: 16 },
     });
+  });
+
+  it("getPaginated returns properties with the total count", async () => {
+    axiosMock.get.mockResolvedValue({
+      data: [mockProperty],
+      headers: { "x-total-count": "9" },
+    });
+    const result = await propertiesService.getPaginated(2, 9);
+    expect(axiosMock.get).toHaveBeenCalledWith(BASE_URL, {
+      params: { page: 2, limit: 9 },
+    });
+    expect(result).toEqual({ properties: [mockProperty], total: 9 });
   });
 });
 

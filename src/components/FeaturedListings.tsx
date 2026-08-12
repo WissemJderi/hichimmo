@@ -11,7 +11,8 @@ const FeaturedListings = () => {
   useEffect(() => {
     const getProperties = async () => {
       try {
-        const fetchedProperties = await propertiesService.getAll();
+        const { properties: fetchedProperties } =
+          await propertiesService.getPaginated(1, 3);
         setProperties(fetchedProperties);
       } catch (error) {
         console.error("Failed to fetch properties:", error);
