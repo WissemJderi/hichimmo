@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { Property, PropertyType, Location } from "../../types/Property";
 import { formatTitle, titleCase } from "../../utils";
 import propertiesService from "../../services/propertiesService";
@@ -149,11 +150,12 @@ const PropertyForm = ({ property, onSuccess }: PropertyFormProps) => {
 
       onSuccess?.(); // Call success callback
       //onCancel(); // Close form
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Erreur lors de la soumission:", error);
-      const errorMessage =
-        error.response?.data?.error || "Erreur lors de la soumission";
-      alert(errorMessage);
+      const errorMessage = axios.isAxiosError(error)
+        ? (error.response?.data as { error?: string } | undefined)?.error
+        : undefined;
+      alert(errorMessage || "Erreur lors de la soumission");
     } finally {
       setIsSubmitting(false);
     }

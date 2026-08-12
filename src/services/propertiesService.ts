@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Location, Property, PropertyType } from "../types/Property";
+import { API_URL } from "./config";
 
-const baseUrl = "/api/properties";
-const adminUrl = "https://dahechimmo-backend.onrender.com/api/properties";
+const baseUrl = `${API_URL}/properties`;
 
 const getAll = async () => {
   const data = await axios.get<Property[]>(baseUrl);
@@ -10,19 +10,24 @@ const getAll = async () => {
 };
 
 const getPropertyById = async (id: string) => {
-  const fetchProperty = await axios.get<Property>(`${baseUrl}?id=${id}`);
+  const fetchProperty = await axios.get<Property>(`${baseUrl}/${id}`);
   return fetchProperty.data;
 };
 
 const searchProperties = async (
-  location: Location | "none",
-  type: PropertyType,
+  location?: Location | "none",
+  type?: PropertyType | "none",
 ) => {
-  const properties = await axios.get<Property[]>(
-    `${baseUrl}?location=${location}&type=${type}`,
-  );
+  const params: Record<string, string> = {};
+  if (location && location !== "none") params.location = location;
+  if (type && type !== "none") params.type = type;
+
+  const properties = await axios.get<Property[]>(`${baseUrl}/search`, {
+    params,
+  });
   return properties.data;
 };
+
 const addProperty = async (data: FormData) => {
   const token = localStorage.getItem("webtoken");
   if (!token) {
@@ -31,7 +36,7 @@ const addProperty = async (data: FormData) => {
 
   const parsedToken = JSON.parse(token);
 
-  const property = await axios.post(adminUrl, data, {
+  const property = await axios.post(baseUrl, data, {
     headers: { Authorization: `Bearer ${parsedToken}` },
   });
 
@@ -46,7 +51,7 @@ const removeProperty = async (id: string) => {
 
   const parsedToken = JSON.parse(token);
 
-  const property = await axios.delete(`${adminUrl}/${id}`, {
+  const property = await axios.delete(`${baseUrl}/${id}`, {
     headers: { Authorization: `Bearer ${parsedToken}` },
   });
 
@@ -57,7 +62,7 @@ const updateProperty = async (id: string, data: FormData) => {
   const token = localStorage.getItem("webtoken");
   if (!token) throw new Error("Token is invalid");
   const parsedToken = JSON.parse(token);
-  const property = await axios.put(`${adminUrl}/${id}`, data, {
+  const property = await axios.put(`${baseUrl}/${id}`, data, {
     headers: { Authorization: `Bearer ${parsedToken}` },
   });
   return property.data;

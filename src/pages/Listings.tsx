@@ -18,17 +18,11 @@ const Listings = () => {
       try {
         if (location && type) {
           const fetchedProperties = await propertiesService.searchProperties(
-            (location as Location) || "none",
+            location as Location,
             type as PropertyType,
           );
 
-          setProperties(
-            Array.isArray(fetchedProperties)
-              ? fetchedProperties
-              : fetchedProperties
-                ? [fetchedProperties]
-                : [],
-          );
+          setProperties(fetchedProperties);
         } else {
           const fetchedProperties = await propertiesService.getAll();
           setProperties(fetchedProperties);

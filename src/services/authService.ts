@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_URL } from "./config";
 
-const baseUrl = "https://dahechimmo-backend.onrender.com/api/auth";
+const baseUrl = `${API_URL}/auth`;
 
 const login = async (username: string, password: string) => {
   const token = await axios.post(`${baseUrl}/login`, { username, password });

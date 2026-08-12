@@ -42,7 +42,7 @@ const PropertyDetailPage = () => {
       }
     };
     getProperty();
-  }, []);
+  }, [id]);
 
   if (!id) {
     return <p>Property not found</p>;

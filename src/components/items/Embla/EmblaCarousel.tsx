@@ -1,9 +1,6 @@
 import { EmblaOptionsType } from "embla-carousel";
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
+import { PrevButton, NextButton } from "./EmblaCarouselArrowButtons";
+import { usePrevNextButtons } from "./usePrevNextButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import "../../../css/embla.css";
 
