@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
-import { FaParking } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaBuilding,
+  FaMapMarkerAlt,
+  FaParking,
+  FaRuler,
+} from "react-icons/fa";
 import { MdBathroom, MdBedroomParent } from "react-icons/md";
-import { FaBuilding } from "react-icons/fa6";
 import { Link } from "react-router";
-import { FaRuler } from "react-icons/fa";
 import EmblaCarousel from "./Embla/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import React from "react";
@@ -12,12 +16,27 @@ import { Property } from "../../types/Property";
 
 const OPTIONS: EmblaOptionsType = { dragFree: false };
 
+const Chip = ({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) => (
+  <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-100 bg-gray-50 px-2.5 py-1 text-xs font-semibold text-gray-700">
+    <span className="text-primary [&>svg]:h-3.5 [&>svg]:w-3.5">{icon}</span>
+    {children}
+  </span>
+);
+
 const PropertyCard = ({
   _id,
   title,
   location,
   price,
   images,
+  status,
+  propertyType,
   area,
   bedrooms,
   bathrooms,
@@ -31,58 +50,60 @@ const PropertyCard = ({
         show: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5 }}
-      className="overflow-hidden rounded-lg bg-white shadow hover:shadow-lg transition flex flex-col justify-between"
+      className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl"
     >
-      <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">
+      <div className="relative overflow-hidden">
+        <EmblaCarousel slides={images} options={OPTIONS} rounded={false} />
+        {images.length === 0 && (
+          <div className="aspect-4/3 w-full bg-gradient-to-br from-primary to-primary-hover" />
+        )}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+        <span className="absolute left-4 top-4 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-primary shadow-sm">
+          {status === "sale" ? "À vendre" : "À louer"}
+        </span>
+        <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-sm font-bold text-primary shadow">
+          {formatPrice(price)}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="line-clamp-2 font-montserrat text-[17px] font-semibold leading-snug text-gray-900">
           {title}
         </h3>
-        <p className="mt-2 text-sm text-gray-600 font-semibold">
-          {formatTitle(location)}
+        <p className="mt-1.5 flex items-center gap-1.5 text-sm text-gray-500">
+          <FaMapMarkerAlt aria-hidden className="shrink-0 text-primary" />
+          <span className="min-w-0 truncate">{formatTitle(location)}</span>
         </p>
-        {/* Features row - only show items that exist */}
-        <div className="mt-4 flex flex-wrap gap-6 text-sm text-gray-700">
+
+        <div className="mb-5 mt-4 flex flex-wrap gap-1.5">
           {bedrooms != null && bedrooms > 0 && (
-            <span className="flex items-center gap-2">
-              <MdBedroomParent className="text-lg" />
-              {bedrooms} Ch.
-            </span>
+            <Chip icon={<MdBedroomParent />}>{bedrooms} Ch.</Chip>
           )}
           {bathrooms != null && bathrooms > 0 && (
-            <span className="flex items-center gap-2">
-              <MdBathroom className="text-lg" />
-              {bathrooms} SDB
-            </span>
+            <Chip icon={<MdBathroom />}>{bathrooms} SDB</Chip>
           )}
+          {area != null && <Chip icon={<FaRuler />}>{area} m²</Chip>}
           {floor != null && (
-            <span className="flex items-center gap-2">
-              <FaBuilding className="text-lg" />
-              {formatFloor(floor)}
-            </span>
+            <Chip icon={<FaBuilding />}>{formatFloor(floor)}</Chip>
           )}
-          {parking ? (
-            <span>
-              <FaParking />
-              Parking
-            </span>
-          ) : null}
-          {area != null && (
-            <span className="flex items-center gap-2">
-              <FaRuler className="text-lg" />
-              {area} m²
-            </span>
-          )}
+          {parking && <Chip icon={<FaParking />}>Parking</Chip>}
         </div>
-        <p className="mt-4 text-xl font-bold text-primary">
-          {formatPrice(price)}
-        </p>
-        <Link
-          to={`/listings/${_id}`}
-          className="mt-6 block w-full rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-white hover:bg-primary-hover transition"
-        >
-          Voir le détail
-        </Link>
+
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+          <span className="truncate text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+            {propertyType}
+          </span>
+          <Link
+            to={`/listings/${_id}`}
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary transition hover:text-primary-hover"
+          >
+            Voir le détail
+            <FaArrowRight
+              aria-hidden
+              className="transition group-hover:translate-x-0.5"
+            />
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

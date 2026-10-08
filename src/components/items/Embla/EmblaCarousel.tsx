@@ -1,6 +1,6 @@
 import { EmblaOptionsType } from "embla-carousel";
-import { PrevButton, NextButton } from "./EmblaCarouselArrowButtons";
-import { usePrevNextButtons } from "./usePrevNextButtons";
+import { DotButton } from "./EmblaCarouselDotButton";
+import { useDotButton } from "./useDotButton";
 import useEmblaCarousel from "embla-carousel-react";
 import "../../../css/embla.css";
 import { optimizeImageUrl } from "../../../utils";
@@ -15,17 +15,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options, rounded } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
 
   const roundedBorder = rounded ? "rounded-lg" : "";
 
   return (
-    <section className="embla">
+    <section className="embla relative">
       <div
         className={`embla__viewport overflow-hidden ${roundedBorder}`}
         ref={emblaRef}
@@ -37,7 +33,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               key={i}
             >
               <img
-                className="w-full aspect-4/3 md:aspect-video object-cover shadow"
+                className="w-full aspect-4/3 md:aspect-video object-cover shadow transition duration-500 group-hover:scale-105"
                 src={optimizeImageUrl(src, {
                   width: 800,
                   height: 600,
@@ -56,9 +52,18 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       </div>
 
       {slides.length > 1 ? (
-        <div className="embla__controls flex justify-center mt-4 space-x-4">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        <div className="absolute bottom-4 right-4 z-10 flex gap-1.5">
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+              key={index}
+              type="button"
+              aria-label={`Afficher la photo ${index + 1}`}
+              className={`h-1.5 w-1.5 rounded-full transition ${
+                index === selectedIndex ? "bg-white" : "bg-white/45"
+              }`}
+              onClick={() => onDotButtonClick(index)}
+            />
+          ))}
         </div>
       ) : null}
     </section>
