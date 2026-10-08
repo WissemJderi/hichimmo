@@ -1,0 +1,15 @@
+#!/bin/sh
+# Reject direct pushes to main. Land changes through a feature branch and a PR.
+
+while read local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    echo "Blocked: direct push to main." >&2
+    echo "Land changes through a PR:" >&2
+    echo "  git switch -c <branch> && git push -u origin <branch>" >&2
+    echo "  gh pr create" >&2
+    echo "(Bypass once with: git push --no-verify)" >&2
+    exit 1
+  fi
+done
+
+exit 0
