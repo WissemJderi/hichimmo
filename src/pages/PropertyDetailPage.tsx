@@ -45,10 +45,10 @@ const PropertyDetailPage = () => {
   }, [id]);
 
   if (!id) {
-    return <p>Property not found</p>;
+    return <p className="text-center text-lg py-12">Aucune propriété trouvée.</p>;
   }
   if (!property) {
-    return <p>Property not found</p>;
+    return <p className="text-center text-lg py-12">Aucune propriété trouvée.</p>;
   }
 
   if (loading)
@@ -72,8 +72,7 @@ const PropertyDetailPage = () => {
   //     )
   //     .slice(0, 7);
   // }, [property]);
-  if (!property._id)
-    return <p className="text-center text-lg">Chargement des propriétés...</p>;
+
 
   return (
     <motion.div
@@ -129,7 +128,7 @@ const PropertyDetailPage = () => {
           </span>
         )}
         {property.parking ? (
-          <span>
+          <span className={`${spanStyle}`}>
             <FaParking />
             Parking
           </span>

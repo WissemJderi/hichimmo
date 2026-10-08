@@ -3,7 +3,7 @@ import {
   inputClass,
   MAX_IMAGES,
 } from "../../../../constants/formConstants";
-import ImagePreviw from "../ImagePreviw";
+import ImagePreview from "../ImagePreview";
 
 interface ImagesSectionProps {
   imagePreviews: string[];
@@ -46,7 +46,7 @@ const ImagesSection = ({
     )}
 
     {imagePreviews.length > 0 && (
-      <ImagePreviw imagePreviews={imagePreviews} removeImage={removeImage} />
+      <ImagePreview imagePreviews={imagePreviews} removeImage={removeImage} />
     )}
   </div>
 );

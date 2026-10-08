@@ -74,9 +74,9 @@ const Listings = () => {
       </motion.h2>
 
       <motion.div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato">
-        {properties.map((property) => (
+        {properties.map((property, index) => (
           <PropertyCard
-            key={`${property.title} ${property._id}`}
+            key={property._id || `${property.ref}-${index}`}
             {...property}
             area={property.area ?? undefined}
           />

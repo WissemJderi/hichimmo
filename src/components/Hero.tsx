@@ -24,6 +24,9 @@ const Hero = () => {
           alt="Real estate background"
           width={1920}
           height={1080}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
 
