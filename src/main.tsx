@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React, { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
@@ -23,28 +23,30 @@ export function Layout() {
       <Navbar />
       <ScrollToTop />
       <main className="grow">
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/listings" element={<Listings />} />
-          <Route path="/listings/:id" element={<PropertyDetailPage />} />
-          <Route path="/admin/login" element={<LoginPage />} />
-          <Route
-            path="/admin/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/new-property"
-            element={
-              <ProtectedRoute>
-                <AddPropertyForm />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
+        <Suspense fallback={<p className="text-center text-lg py-12">Chargement...</p>}>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/listings" element={<Listings />} />
+            <Route path="/listings/:id" element={<PropertyDetailPage />} />
+            <Route path="/admin/login" element={<LoginPage />} />
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/new-property"
+              element={
+                <ProtectedRoute>
+                  <AddPropertyForm />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
       </main>
 
       <Footer />

@@ -1,8 +1,8 @@
-interface ImagePreviw {
+interface ImagePreviewProps {
   imagePreviews: string[];
   removeImage: (index: number) => void;
 }
-const ImagePreviw = ({ imagePreviews, removeImage }: ImagePreviw) => {
+const ImagePreview = ({ imagePreviews, removeImage }: ImagePreviewProps) => {
   return (
     <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       {imagePreviews.map((preview, index) => (
@@ -11,6 +11,8 @@ const ImagePreviw = ({ imagePreviews, removeImage }: ImagePreviw) => {
             src={preview}
             alt={`Preview ${index + 1}`}
             className="h-24 w-full object-cover rounded border border-gray-300"
+            loading="lazy"
+            decoding="async"
           />
           <button
             type="button"
@@ -37,4 +39,4 @@ const ImagePreviw = ({ imagePreviews, removeImage }: ImagePreviw) => {
   );
 };
 
-export default ImagePreviw;
+export default ImagePreview;

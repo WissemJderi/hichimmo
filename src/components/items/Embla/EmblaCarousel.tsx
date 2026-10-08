@@ -3,6 +3,7 @@ import { PrevButton, NextButton } from "./EmblaCarouselArrowButtons";
 import { usePrevNextButtons } from "./usePrevNextButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import "../../../css/embla.css";
+import { optimizeImageUrl } from "../../../utils";
 
 type PropType = {
   slides: string[];
@@ -36,12 +37,18 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               key={i}
             >
               <img
-                className="w-full aspect-4/3 md:aspect-video object-fill shadow"
-                src={src}
+                className="w-full aspect-4/3 md:aspect-video object-cover shadow"
+                src={optimizeImageUrl(src, {
+                  width: 800,
+                  height: 600,
+                })}
                 alt={`slide-${i}`}
                 width={800}
-                loading="lazy"
                 height={600}
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : undefined}
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
           ))}

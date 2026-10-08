@@ -7,6 +7,7 @@ import {
   formatPrice,
   formatTitle,
   titleCase,
+  optimizeImageUrl,
 } from "./utils";
 
 describe("formatNumber", () => {
@@ -57,5 +58,25 @@ describe("formatFloor", () => {
     expect(formatFloor(0)).toBe("Rez-de-chaussée");
     expect(formatFloor(1)).toBe("1er étage");
     expect(formatFloor(3)).toBe("3e étage");
+  });
+});
+
+describe("optimizeImageUrl", () => {
+  it("returns original url if empty", () => {
+    expect(optimizeImageUrl("")).toBe("");
+  });
+
+  it("optimizes cloudinary urls", () => {
+    const url = "https://res.cloudinary.com/dbdwqn8na/image/upload/v123456/properties/img.jpg";
+    const result = optimizeImageUrl(url, { width: 800, height: 600 });
+    expect(result).toContain("q_auto:best");
+    expect(result).toContain("f_auto");
+    expect(result).toContain("w_800");
+    expect(result).toContain("h_600,c_fill");
+  });
+
+  it("returns original url for non-cloudinary", () => {
+    const url = "https://example.com/image.jpg";
+    expect(optimizeImageUrl(url, { width: 800 })).toBe(url);
   });
 });

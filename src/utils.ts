@@ -54,3 +54,31 @@ export const formatFloor = (floorNum: number): string => {
   if (floorNum === 1) return "1er étage";
   return `${floorNum}e étage`;
 };
+
+export const optimizeImageUrl = (
+  url: string,
+  options?: {
+    width?: number;
+    height?: number;
+    quality?: string | number;
+    format?: string;
+  }
+): string => {
+  if (!url) return url;
+
+  const { width, height, quality = "auto:best", format = "auto" } = options || {};
+
+  if (url.includes("cloudinary.com")) {
+    const transformations: string[] = [`q_${quality}`, `f_${format}`];
+    if (width) transformations.push(`w_${width}`);
+    if (height) transformations.push(`h_${height},c_fill`);
+    else if (width) transformations.push(`c_scale`);
+
+    const transformString = transformations.join(",");
+    if (url.includes("/upload/")) {
+      return url.replace("/upload/", `/upload/${transformString}/`);
+    }
+  }
+
+  return url;
+};

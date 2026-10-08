@@ -70,9 +70,9 @@ const FeaturedListings = () => {
           }}
           className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 font-lato"
         >
-          {featuredProperties.map((property) => (
+          {featuredProperties.map((property, index) => (
             <PropertyCard
-              key={property._id}
+              key={property._id || `${property.ref}-${index}`}
               {...property}
               area={property.area ?? undefined}
             />
