@@ -59,7 +59,7 @@ const PropertyCard = ({
         )}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
         <span className="absolute left-4 top-4 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-primary shadow-sm">
-          {status === "sale" ? "À vendre" : "À louer"}
+          {status === "sale" ? "À vendre" : status === "rent" ? "À louer" : "—"}
         </span>
         <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-sm font-bold text-primary shadow">
           {formatPrice(price)}

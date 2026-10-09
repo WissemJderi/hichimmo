@@ -32,6 +32,8 @@ export interface Property {
   title: string;
   ref: string;
   description: string;
+  longDescription?: string;
+  features?: string[];
   price: number;
   propertyType: PropertyType;
   location: Location;
