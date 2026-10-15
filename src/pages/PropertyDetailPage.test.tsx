@@ -66,4 +66,21 @@ describe("PropertyDetailPage", () => {
     expect(whatsappLink).toHaveAttribute("href", expect.stringContaining("wa.me"));
     expect(whatsappLink).toHaveAttribute("target", "_blank");
   });
+
+  it("shows a not-found state when the fetch fails", async () => {
+    const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.mocked(propertiesService.getPropertyById).mockRejectedValue(
+      new Error("not found"),
+    );
+
+    renderPage();
+
+    expect(
+      await screen.findByText("Aucune propriété trouvée."),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { level: 1 }),
+    ).not.toBeInTheDocument();
+    consoleSpy.mockRestore();
+  });
 });
