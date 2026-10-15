@@ -17,7 +17,7 @@ vi.mock("../components/items/Embla/EmblaCarousel", () => ({
   default: () => <div data-testid="embla-carousel" />,
 }));
 
-const property = (overrides: Partial<Property> = {}): Property => ({
+const makeProperty = (overrides: Partial<Property> = {}): Property => ({
   _id: "abc123",
   title: "Duplex moderne à Sousse",
   ref: "ABC-1",
@@ -45,7 +45,7 @@ describe("Listings", () => {
 
   it("shows loading then the fetched properties", async () => {
     vi.mocked(propertiesService.getPaginated).mockResolvedValue({
-      properties: [property()],
+      properties: [makeProperty()],
       total: 1,
     });
 
@@ -69,7 +69,7 @@ describe("Listings", () => {
 
   it("searches with filters when location and type params are present", async () => {
     vi.mocked(propertiesService.searchPaginated).mockResolvedValue({
-      properties: [property()],
+      properties: [makeProperty()],
       total: 1,
     });
 
@@ -85,12 +85,28 @@ describe("Listings", () => {
     expect(propertiesService.getPaginated).not.toHaveBeenCalled();
   });
 
+  it.each(["/listings?type=appartement", "/listings?location=sousse"])(
+    "falls back to getPaginated when only one filter param is present (%s)",
+    async (path) => {
+      vi.mocked(propertiesService.getPaginated).mockResolvedValue({
+        properties: [makeProperty()],
+        total: 1,
+      });
+
+      renderListings(path);
+
+      expect(await screen.findByText("Duplex moderne à Sousse")).toBeInTheDocument();
+      expect(propertiesService.getPaginated).toHaveBeenCalledWith(1, 9);
+      expect(propertiesService.searchPaginated).not.toHaveBeenCalled();
+    },
+  );
+
   it("appends the next page when 'Charger plus' is clicked", async () => {
     const user = userEvent.setup();
     vi.mocked(propertiesService.getPaginated)
-      .mockResolvedValueOnce({ properties: [property()], total: 2 })
+      .mockResolvedValueOnce({ properties: [makeProperty()], total: 2 })
       .mockResolvedValueOnce({
-        properties: [property({ _id: "def456", title: "Villa à Kantaoui" })],
+        properties: [makeProperty({ _id: "def456", title: "Villa à Kantaoui" })],
         total: 2,
       });
 

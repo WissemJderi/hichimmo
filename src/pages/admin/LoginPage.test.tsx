@@ -9,15 +9,26 @@ vi.mock("../../services/authService", () => ({
   default: { login: vi.fn() },
 }));
 
-const renderLogin = (initialPath = "/admin/login") =>
+const renderLogin = () =>
   render(
-    <MemoryRouter initialEntries={[initialPath]}>
+    <MemoryRouter initialEntries={["/admin/login"]}>
       <Routes>
         <Route path="/admin/login" element={<LoginPage />} />
         <Route path="/admin/dashboard" element={<p>Dashboard page</p>} />
       </Routes>
     </MemoryRouter>,
   );
+
+type User = Awaited<ReturnType<typeof userEvent.setup>>;
+
+const fillCredentials = async (
+  user: User,
+  username: string,
+  password: string,
+) => {
+  await user.type(screen.getByLabelText(/Nom d’utilisateur/), username);
+  await user.type(screen.getByLabelText(/Mot de passe/), password);
+};
 
 describe("LoginPage", () => {
   beforeEach(() => {
@@ -55,8 +66,7 @@ describe("LoginPage", () => {
     vi.mocked(authService.login).mockResolvedValue({ token: "jwt-123" });
     renderLogin();
 
-    await user.type(screen.getByLabelText(/Nom d’utilisateur/), "admin");
-    await user.type(screen.getByLabelText(/Mot de passe/), "secret");
+    await fillCredentials(user, "admin", "secret");
     await user.click(screen.getByRole("button", { name: "Se connecter" }));
 
     expect(await screen.findByText("Dashboard page")).toBeInTheDocument();
@@ -70,8 +80,7 @@ describe("LoginPage", () => {
     vi.mocked(authService.login).mockRejectedValue(new Error("401"));
     renderLogin();
 
-    await user.type(screen.getByLabelText(/Nom d’utilisateur/), "admin");
-    await user.type(screen.getByLabelText(/Mot de passe/), "wrong");
+    await fillCredentials(user, "admin", "wrong");
     await user.click(screen.getByRole("button", { name: "Se connecter" }));
 
     expect(

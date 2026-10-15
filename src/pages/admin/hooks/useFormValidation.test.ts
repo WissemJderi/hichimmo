@@ -18,10 +18,13 @@ const validForm: FormDataState = {
   parking: false,
 };
 
-const fields = (overrides: Partial<FormDataState>): FormDataState => ({
+const makeForm = (overrides: Partial<FormDataState>): FormDataState => ({
   ...validForm,
   ...overrides,
 });
+
+const errorFields = (form: FormDataState) =>
+  validatePropertyForm(form).map((e) => e.field);
 
 describe("validatePropertyForm", () => {
   it("accepts a valid form", () => {
@@ -31,7 +34,7 @@ describe("validatePropertyForm", () => {
 
   it("requires title, ref, description, type, location, status", () => {
     const errors = validatePropertyForm(
-      fields({
+      makeForm({
         title: "  ",
         ref: "",
         description: "",
@@ -43,53 +46,48 @@ describe("validatePropertyForm", () => {
     expect(errors.map((e) => e.field).sort()).toEqual(
       ["description", "location", "propertyType", "ref", "status", "title"].sort(),
     );
-    expect(isFormValid(fields({ title: "" }))).toBe(false);
+    expect(isFormValid(makeForm({ title: "" }))).toBe(false);
   });
 
   it("requires price and area", () => {
     expect(
-      validatePropertyForm(
-        fields({ price: undefined as never, area: undefined as never }),
-      ).map((e) => e.field),
+      errorFields(makeForm({ price: undefined as never, area: undefined as never })),
     ).toEqual(expect.arrayContaining(["price", "area"]));
   });
 
   it("rejects non-positive price and area", () => {
-    expect(
-      validatePropertyForm(fields({ price: 0, area: -5 })).map((e) => e.field),
-    ).toEqual(expect.arrayContaining(["price", "area"]));
+    expect(errorFields(makeForm({ price: 0, area: -5 }))).toEqual(
+      expect.arrayContaining(["price", "area"]),
+    );
   });
 
   it("rejects non-finite price and area", () => {
-    const errors = validatePropertyForm(fields({ price: NaN, area: Infinity }));
-    expect(errors.map((e) => e.field)).toEqual(
+    expect(errorFields(makeForm({ price: NaN, area: Infinity }))).toEqual(
       expect.arrayContaining(["price", "area"]),
     );
   });
 
   it("rejects null price and area", () => {
-    const errors = validatePropertyForm(
-      fields({ price: null as never, area: null as never }),
-    ).map((e) => e.field);
-    expect(errors).toEqual(expect.arrayContaining(["price", "area"]));
+    expect(
+      errorFields(makeForm({ price: null as never, area: null as never })),
+    ).toEqual(expect.arrayContaining(["price", "area"]));
   });
 
   it("requires title and ref when undefined", () => {
-    const errors = validatePropertyForm(
-      fields({ title: undefined as never, ref: undefined as never }),
-    ).map((e) => e.field);
-    expect(errors).toEqual(expect.arrayContaining(["title", "ref"]));
+    expect(
+      errorFields(makeForm({ title: undefined as never, ref: undefined as never })),
+    ).toEqual(expect.arrayContaining(["title", "ref"]));
   });
 
   it("allows zero bedrooms, bathrooms, floor", () => {
     expect(
-      validatePropertyForm(fields({ bedrooms: 0, bathrooms: 0, floor: 0 })),
+      validatePropertyForm(makeForm({ bedrooms: 0, bathrooms: 0, floor: 0 })),
     ).toEqual([]);
   });
 
   it("rejects negative or decimal bedrooms, bathrooms, floor", () => {
     const errors = validatePropertyForm(
-      fields({ bedrooms: -1, bathrooms: 1.5, floor: 2.5 }),
+      makeForm({ bedrooms: -1, bathrooms: 1.5, floor: 2.5 }),
     );
     expect(errors.map((e) => e.field).sort()).toEqual(
       ["bathrooms", "bedrooms", "floor"].sort(),

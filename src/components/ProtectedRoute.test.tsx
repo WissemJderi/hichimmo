@@ -3,9 +3,9 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-const renderProtected = (initialPath = "/admin/dashboard") =>
+const renderProtected = () =>
   render(
-    <MemoryRouter initialEntries={[initialPath]}>
+    <MemoryRouter initialEntries={["/admin/dashboard"]}>
       <Routes>
         <Route
           path="/admin/dashboard"
