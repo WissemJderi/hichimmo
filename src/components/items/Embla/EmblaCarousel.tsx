@@ -51,12 +51,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   key={i}
                 >
                   <img
-                    className="w-full aspect-4/3 md:aspect-video object-cover shadow transition duration-500 group-hover:scale-105"
+                    className="w-full aspect-4/3 md:aspect-video bg-gray-100 object-cover shadow transition duration-500 group-hover:scale-105"
                     src={optimizeImageUrl(src, {
                       width: 800,
                       height: 600,
                     })}
-                    alt={`slide-${i}`}
+                    alt=""
                     width={800}
                     height={600}
                     loading={i === 0 ? "eager" : "lazy"}
